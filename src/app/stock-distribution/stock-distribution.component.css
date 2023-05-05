@@ -1,0 +1,107 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    height: 80px;
+}
+
+
+.add-order {
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    border: none;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.add-order svg{
+    margin-right: 5px;
+}
+
+
+
+.title-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.title-name h5 {
+    color: var(--blue);
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 5px;
+}
+.title-name h5 span{
+    margin-left: 10px;
+}
+
+.table-container{
+    width: 97%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    background-color: white;
+}
+table tr{
+    height: 50px;
+    border-bottom: solid rgba(128, 128, 128, 0.5) 1px;
+}
+table tr th,table tr td{
+    padding-left: 20px;
+}
+.table-header{
+    background-color: #BFD2DA    ;
+    color: var(--blue);
+}
+.edit-detail-btn{
+    background: #E5EDF0 ;
+    border: none;
+    color: var(--blue);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 5px ;
+    border-radius: 3px;
+}
+.edit-detail-btn svg{
+    margin-right: 5px;
+}
+.action span button{
+    height: 31px;
+    width: 31px;
+    border-radius: 3px;
+    background-color: var(--blue);
+    border: none;
+}
+.action span input{
+    max-width: 70px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.234);
+}
+.submit-btn{
+    width: 97%;
+    margin:auto;
+    height: 70px;
+    padding: 10px 100px;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.submit-btn button{
+    background-color: var(--blue);
+    height: fit-content;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 45px;
+}
+

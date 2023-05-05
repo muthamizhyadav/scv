@@ -1,0 +1,133 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    height: 80px;
+}
+
+
+.page-title .date{
+    color: var(--blue);
+    font-weight: 700;
+}
+
+
+.title-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.title-name h5 {
+    color: var(--blue);
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.table-container{
+    width: 97%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    padding-left: 20px;
+    background-color: white;
+}
+table tr{
+    height: 50px;
+    border-bottom: solid rgba(128, 128, 128, 0.5) 1px;
+}
+
+table tr td span{
+    display: flex;
+    align-items: flex-end;
+}
+table tr td span sub{
+    font-size: 10px !important;
+}
+.table-header{
+    background-color: #BFD2DA    ;
+    color: var(--blue);
+}
+.edit-detail-btn{
+    background: #E5EDF0 ;
+    border: none;
+    color: var(--blue);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 5px ;
+    border-radius: 3px;
+}
+.edit-detail-btn svg{
+    margin-right: 5px;
+}
+
+
+.input-field{
+    max-width: 70px;
+    padding:3px 5px;
+    border-radius: 3px;
+    margin: 0 3px;
+    border: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.view button{
+    display: flex;
+    max-width: fit-content;
+    padding-left: 0 !important;
+    cursor: pointer;
+    align-items: center !important;
+    border: none;
+    background: none;
+}
+.view button svg{
+    margin-left: 10px;
+}
+table table tr{
+    border-bottom: none;
+}
+.accordion-item td{
+    padding-left: 0;
+}
+.accordion-item td table tr td{
+    padding-left: 20px;
+}
+table tr td,table tr th{
+    padding-left: 0;
+}
+thead tr td table tr th{
+    padding-left: 20px;
+}
+.accordion-button:not(.collapsed) {
+    color: none !important;
+    background-color:  none !important;
+    box-shadow:  none !important;
+}
+.accordion-button:focus {
+    z-index: 3;
+    color: none !important;
+    background-color:  none !important;
+    box-shadow:  none !important;
+}
+.submit-btn{
+    width: 97%;
+    margin:auto;
+    height: 70px;
+    padding: 10px 100px;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.submit-btn button{
+    background-color: var(--blue);
+    height: fit-content;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 0px;
+    min-width: 130px;
+}

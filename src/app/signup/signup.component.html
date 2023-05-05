@@ -1,0 +1,25 @@
+<div class="main-container2">
+  <div class="login-content">
+    <p>Welcome !</p>
+    <span>Sign Up To Access Your Order</span>
+  </div>
+  <div class="login-forms" [formGroup]="SignUpForm">
+    <div class="input-login">
+      <label>Mobile Number:</label>
+      <input
+        type="number"
+        placeholder="Enter your Mobile Number"
+        formControlName="mobileNumber"
+      />
+    </div>
+    <p *ngIf="submited && SignUpForm.get('mobileNumber').invalid" class="err">
+      mobile Number in Invalid
+    </p>
+    <div class="login-btn">
+      <button (click)="signUpAttemp()">Send OTP</button>
+    </div>
+    <div class="account-msg-login">
+      <p>Already have an account?<span (click)="singIn()">Sign in</span></p>
+    </div>
+  </div>
+</div>

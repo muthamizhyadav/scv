@@ -1,0 +1,261 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    height: 80px;
+}
+
+
+.add-cart {
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    border: none;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.add-cart svg{
+    margin-right: 5px;
+}
+
+.prev-date {
+    background-color: var(--blue);
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    padding: 5px 8px;
+    transition: 0.2s all;
+
+}
+
+.next-date {
+    background-color: var(--blue);
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+    transition: 0.2s all;
+
+    opacity: 0;
+    padding: 5px 8px;
+}
+
+.date:hover .next-date {
+    opacity: 1;
+    transition: 0.2s all;
+}
+
+.date:hover .prev-date {
+    opacity: 1;
+    transition: 0.2s all;
+
+}
+
+.date span {
+    display: flex;
+    align-items: center;
+}
+
+.date span label {
+    margin-left: 5px;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.title-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.title-name h5 {
+    color: var(--blue);
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.carts-container {
+    padding: 0 25px 20px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 2.5%;
+}
+
+.carts-card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    min-width: 23%;
+    max-width: 300px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.carts-card .cart-image {
+    width: 80%;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: red;
+}
+
+.carts-card .cart-image img {
+    min-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+
+    object-fit: fill;
+}
+
+.cart-name {
+    margin-bottom: 10px;
+    max-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 16px !important;
+}
+
+.vehicle-detail,
+.cart-location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.cart-location p {
+    margin-left: 5px;
+    max-width: 150px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.vehicle-detail{
+    min-width: fit-content !important;
+}
+.vehicle-detail p sub{
+    font-size: 12px !important ;
+    opacity: 70%;
+}
+
+.cart-action-btn{
+    margin-top: 10px;
+    display: flex;
+    width: 100% !important;
+    justify-content: space-between !important;
+    align-items: center;
+}
+.cart-action-btn button{
+    min-width: 45%;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    background-color: hsla(198, 100%, 21%, 0.1)    ;
+}
+.cart-action-btn button svg{
+    margin-right: 5px;
+}
+
+.edit-btn{
+    color: var(--blue);
+}
+.remove-btn{
+    color:var(--red);
+}
+
+.popup-container{
+    width: fit-content;
+  height: fit-content;
+  padding: 0 0 50px 0;
+}
+
+.popup-container .title{
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+.popup-container .title h3{
+    font-weight: 700;
+    font-size: 18px !important;
+    color: var(--blue);
+}
+
+.popup-container .form{
+    width: 600px;
+    margin-top: 30px;
+    min-width: 700px;
+    padding: 0 100px;
+}
+
+.popup-container .form div{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin:15px auto;
+}
+.popup-container .form div label{
+    width: 40%;
+    font-weight: 600;
+}
+.popup-container .form div .choose-image{
+    width: 60%;
+
+}
+.popup-container .form div input{
+    padding: 8px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    border: none;
+    width: 60%;
+}
+.choose-image{
+    margin: 0 !important;
+    display: flex;
+    align-items: flex-end !important;
+}
+.choose-image label{
+    background-color: #BFD2DA    ;
+    color: white;
+    min-width: fit-content;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: normal !important;
+}
+.image-format{
+    font-size: 12px !important;
+    margin-left: 5px;
+    opacity: 70%;
+}
+.file-name{
+    margin-left: 5px;
+    text-decoration: underline;
+}
+.submit-btn{
+    display: flex;
+    justify-content: center;
+}
+.submit-btn button{
+    background-color: var(--blue);
+    color: white;
+    padding: 8px 50px;
+    margin-top: 20px;
+    border: none;
+border-radius: 3px;
+}

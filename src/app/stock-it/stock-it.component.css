@@ -1,0 +1,150 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    height: 80px;
+}
+
+.page-title .back {
+    background:none !important;
+        display: flex;
+        border: none;
+        padding: 5px 0;
+    margin-left: 15px;
+    }
+.add-stock {
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    border: none;
+    padding: 5px 0;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.add-stock svg{
+    margin-right: 5px;
+}
+.table-container .date{
+    background-color: var(--blue);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table-container .date button{
+    background: none;
+    border: none;
+}
+.table-container .date p{
+    font-size: 18px !important;
+    color: white;
+    padding: 0 35px;
+}
+
+
+
+.title-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.title-name h5 {
+    color: var(--blue);
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.table-container{
+    width: 97%;
+    margin: auto;
+}
+table{
+    width: 100%;
+    background-color: white;
+    table-layout: fixed;
+}
+table tr{
+    height: 50px;
+    border-bottom: solid rgba(128, 128, 128, 0.5) 1px;
+}
+table tr th,table tr td{
+    padding-left: 20px;
+}
+table tr th span{
+    display: flex !important;
+    align-items: flex-end;
+}
+table tr td span{
+    display: flex;
+    align-items: center;
+}
+table tr th span sub{
+    font-size: 10px !important;
+}
+.table-header{
+    background-color: #BFD2DA    ;
+    color: var(--blue);
+}
+.edit-detail-btn{
+    background: #E5EDF0 ;
+    border: none;
+    color: var(--blue);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 5px ;
+    border-radius: 3px;
+}
+.edit-detail-btn svg{
+    margin-right: 5px;
+}
+.action span button{
+    height: 31px;
+    width: 31px;
+    border-radius: 3px;
+    background-color: var(--blue);
+    border: none;
+}
+.action span input{
+    max-width: 70px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.234);
+}
+.buttons{
+    width: 97%;
+    margin:auto;
+    height: 70px;
+    padding: 10px ;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.buttons button{
+    background-color: var(--blue);
+   min-width: 150px;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 0;
+}
+.submit{
+    margin-right: 80px;
+}
+.buttons div{
+    display: flex;
+    align-items: flex-end;
+}
+.file-type,.file-name{
+    opacity: 70%;
+    font-size: 10px !important;
+    margin-left: 10px;
+}
+

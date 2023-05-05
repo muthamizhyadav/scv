@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div class="container-page">
+  <div class="sidebar" *ngIf="!isLoginPage">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="main-page">
+    <router-outlet></router-outlet>
+  </div>
+</div>

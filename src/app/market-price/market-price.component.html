@@ -1,0 +1,176 @@
+<div class="main-container">
+
+    <div class="page-title">
+   
+        <p class="date none">02/02/2023</p>
+
+        <div class="title-name">
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6.44239L9.38333 0.186833C9.56592 0.0650119 9.7805 0 10 0C10.2195 0 10.4341 0.0650119 10.6167 0.186833L20 6.44239V21.9979C20 22.2926 19.8829 22.5752 19.6746 22.7836C19.4662 22.992 19.1836 23.1091 18.8889 23.1091H1.11111C0.816426 23.1091 0.533811 22.992 0.325437 22.7836C0.117063 22.5752 0 22.2926 0 21.9979V6.44239ZM2.22222 7.63128V20.8868H17.7778V7.63128L10 2.44683L2.22222 7.63128ZM5.55556 16.4424H14.4444V18.6646H5.55556V16.4424ZM5.55556 13.1091H14.4444V15.3313H5.55556V13.1091ZM10 10.8868C9.41063 10.8868 8.8454 10.6527 8.42865 10.236C8.0119 9.81921 7.77778 9.25398 7.77778 8.66461C7.77778 8.07524 8.0119 7.51001 8.42865 7.09326C8.8454 6.67652 9.41063 6.44239 10 6.44239C10.5894 6.44239 11.1546 6.67652 11.5713 7.09326C11.9881 7.51001 12.2222 8.07524 12.2222 8.66461C12.2222 9.25398 11.9881 9.81921 11.5713 10.236C11.1546 10.6527 10.5894 10.8868 10 10.8868Z" fill="#004C6C"/>
+                </svg>
+                 <h5>Market Price</h5>
+        </div>
+
+        <p class="date">02/02/2023</p>
+
+
+       
+    </div>
+
+    <div class="table-container">
+        <table>
+            <tr class="table-header">
+                <th>Product</th>
+                <th>Highest price</th>
+                <th>Lowest price</th>
+                <th>Avg Price</th>
+
+            </tr>
+
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+            <tr>
+                <td>Onion</td>
+                <td>₹ 50 </td>
+                <td>₹ 30</td>
+                <td>₹ 40</td>
+            </tr>
+
+           
+
+        
+
+
+
+
+        </table>
+    </div>
+
+
+</div>
+
+
+<!-- Add SCV & Edit SCV Popup -->
+
+<div class="popup" *ngIf="false">
+    <div class="popup-close"></div>
+    <div class="popup-container">
+        <div class="title">
+            <h3>Add SCV</h3>
+        </div>
+
+        <div class="form">
+            <div>
+                <label>Name :</label>
+                <input type="text" placeholder="Enter Name">
+
+            </div>
+            <p class="error-msg">Error</p>
+            <div>
+                <label>Email ID :</label>
+                <input type="text" placeholder="Enter Email ID">
+            </div>
+
+
+            <div>
+                <label>Phone Number :</label>
+                <input type="text" placeholder="Enter Phone Number">
+            </div>
+
+            <div>
+                <label>Address :</label>
+                <input type="text" placeholder="Enter Address">
+            </div>
+
+            <div>
+                <label>Landmark :</label>
+                <input type="text" placeholder="Enter Landmark">
+            </div>
+
+            <div>
+                <label>Pin code :</label>
+                <input type="text" placeholder="Enter Pin code">
+            </div>
+
+            <div>
+                <label>Address Proof :</label>
+                <div class="choose-image">
+                    <label for="image">Choose Image</label>
+                    <input style="display: none;" id="image" type="file" accept="image/png,image/jpg">
+                    <p class="image-format">.png,.jpg</p>
+                    <p class="file-name" *ngIf="false">File name</p>
+                </div>
+            </div>
+
+            <div>
+                <label>ID Proof :</label>
+                <div class="choose-image">
+                    <label for="image">Choose Image</label>
+                    <input style="display: none;" id="image" type="file" accept="image/png,image/jpg">
+                    <p class="image-format">.png,.jpg</p>
+                    <p class="file-name" *ngIf="false">File name</p>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <button>Submit</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

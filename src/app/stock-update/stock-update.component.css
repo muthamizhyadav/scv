@@ -1,0 +1,125 @@
+.page-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+.Cart-title {
+  width: 50%;
+  justify-content: right;
+  display: flex;
+}
+.Cart-title h5 {
+  color: #004c6c;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+.add-stock-btn {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  margin-right: 54px;
+}
+
+.add-stock-btn button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.table-container table {
+  width: 94.5%;
+  margin: auto;
+  margin-top: 10px;
+}
+.table-container table thead {
+  background-color: #a6cfe0;
+  color: white;
+  border-radius: 4px;
+  font-family: "Poppins";
+}
+
+.table-container table thead th {
+  padding: 9px;
+  color: #004c6c;
+}
+.table-container table tbody tr {
+  background: white;
+}
+.table-container table tbody td {
+  padding: 9px;
+  border-bottom: 1px solid gainsboro;
+}
+.stock-upd-container {
+  display: flex;
+}
+
+.stock-upd-container .stock-upd-left-minus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.stock-upd-container .stock-upd-right-plus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.stock-upd-container .stock-upd-value p {
+  width: 89px;
+  height: 29px;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 4px;
+}
+.stock-upd-bottom {
+  display: flex;
+  background-color: white;
+  width: 91.8%;
+  height: 40px;
+  margin: auto;
+}
+
+.stock-upd-update-stock {
+  width: 100%;
+}
+.stock-upd-close-stock {
+  width: 100%;
+}
+.stock-upd-close-stock button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  float: left;
+  margin-left: 20px;
+}
+.stock-upd-update-stock button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  margin-right: 20px;
+}

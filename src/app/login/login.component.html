@@ -1,0 +1,38 @@
+<div class="main-container2">
+  <div class="login-content">
+    <p>Welcome !</p>
+    <span>Login To Access Your Order</span>
+  </div>
+  <div class="login-forms" [formGroup]="form">
+    <div class="input-login">
+      <label>Mobile Number:</label>
+      <input
+        type="number"
+        placeholder="Enter your Mobile Number"
+        formControlName="mobileNumber"
+      />
+    </div>
+    <p class="err" *ngIf="submitted && form.get('mobileNumber').invalid">
+      Invalid Mobile Number
+    </p>
+    <div class="input-login">
+      <label>Password:</label>
+      <input
+        type="password"
+        placeholder="Enter your Password"
+        formControlName="password"
+      />
+    </div>
+    <p class="err" *ngIf="submitted && form.get('password').invalid">
+      Invalid password
+    </p>
+    <p class="err" *ngIf="incorrect">Incorrect email or password</p>
+    <div class="forgot-password">
+      <span>forgot password ?</span>
+    </div>
+    <div class="login-btn"><button (click)="loginAttempt()">Login</button></div>
+    <div class="account-msg-login">
+      <p>Don't have an account?<span (click)="loginRoute()">Sign up</span></p>
+    </div>
+  </div>
+</div>

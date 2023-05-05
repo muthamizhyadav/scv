@@ -1,0 +1,37 @@
+.page-title-container {
+  display: flex;
+  padding-top: 15px;
+}
+.page-title-container .back-arrow {
+  width: 45%;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.cart-name h5 {
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #004c6c;
+}
+.table-container table {
+  width: 94.5%;
+  margin: auto;
+  margin-top: 10px;
+}
+.table-container table thead {
+  background-color: #a6cfe0;
+  color: white;
+  border-radius: 4px;
+  font-family: "Poppins";
+}
+
+.table-container table thead th {
+  padding: 9px;
+  color: #004c6c;
+}
+.table-container table tbody tr {
+  background: white;
+}
+.table-container table tbody td {
+  padding: 9px;
+  border-bottom: 1px solid gainsboro;
+}

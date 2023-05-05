@@ -1,0 +1,145 @@
+<div class="main-container">
+  <div class="page-title">
+    <p class="date none">02/02/2023</p>
+
+    <div class="title-name">
+      <svg
+        width="23"
+        height="20"
+        viewBox="0 0 23 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.2222 1C10.2222 0.447715 10.6699 0 11.2222 0H22C22.5523 0 23 0.447715 23 1V1.5C23 2.05228 22.5523 2.5 22 2.5H11.2222C10.6699 2.5 10.2222 2.05228 10.2222 1.5V1ZM10.2222 6C10.2222 5.44772 10.6699 5 11.2222 5H16.8889C17.4412 5 17.8889 5.44772 17.8889 6V6.5C17.8889 7.05228 17.4412 7.5 16.8889 7.5H11.2222C10.6699 7.5 10.2222 7.05228 10.2222 6.5V6ZM10.2222 13.5C10.2222 12.9477 10.6699 12.5 11.2222 12.5H22C22.5523 12.5 23 12.9477 23 13.5V14C23 14.5523 22.5523 15 22 15H11.2222C10.6699 15 10.2222 14.5523 10.2222 14V13.5ZM10.2222 18.5C10.2222 17.9477 10.6699 17.5 11.2222 17.5H16.8889C17.4412 17.5 17.8889 17.9477 17.8889 18.5V19C17.8889 19.5523 17.4412 20 16.8889 20H11.2222C10.6699 20 10.2222 19.5523 10.2222 19V18.5ZM0 1C0 0.447715 0.447715 0 1 0H6.66667C7.21895 0 7.66667 0.447715 7.66667 1V6.5C7.66667 7.05228 7.21895 7.5 6.66667 7.5H0.999999C0.447715 7.5 0 7.05228 0 6.5V1ZM3.55555 2.5C3.00327 2.5 2.55556 2.94772 2.55556 3.5V4C2.55556 4.55228 3.00327 5 3.55556 5H4.11111C4.6634 5 5.11111 4.55228 5.11111 4V3.5C5.11111 2.94772 4.6634 2.5 4.11111 2.5H3.55555ZM0 13.5C0 12.9477 0.447715 12.5 1 12.5H6.66667C7.21895 12.5 7.66667 12.9477 7.66667 13.5V19C7.66667 19.5523 7.21895 20 6.66667 20H0.999999C0.447715 20 0 19.5523 0 19V13.5ZM3.55555 15C3.00327 15 2.55556 15.4477 2.55556 16V16.5C2.55556 17.0523 3.00327 17.5 3.55556 17.5H4.11111C4.6634 17.5 5.11111 17.0523 5.11111 16.5V16C5.11111 15.4477 4.6634 15 4.11111 15H3.55555Z"
+          fill="#004C6C"
+        />
+      </svg>
+
+      <h5>SCV Attendance</h5>
+    </div>
+
+    <p class="date">02/02/2023</p>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <tr class="table-header">
+        <th>SCV Name</th>
+        <th>Cart Name</th>
+        <th>Cart Number</th>
+        <th>Attendance</th>
+        <th>Report</th>
+      </tr>
+
+      <tr *ngFor="let scvAtt of attendanceData; let i = index">
+        <td>{{ scvAtt.Name }}</td>
+        <td>{{ scvAtt.cart.cartName }}</td>
+        <td>
+          <span
+            ><p>{{ scvAtt.cart.vehicleNumber }}</p>
+            <sub>({{ scvAtt.cart.vehicleName }})</sub></span
+          >
+        </td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" (change)="active_InActive_Change(i)" [checked]="checked(scvAtt.active)" />
+            <span class="slider"></span>
+          </label>
+        </td>
+        <td class="link">View Report</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Add SCV & Edit SCV Popup -->
+
+<div class="popup" *ngIf="false">
+  <div class="popup-close"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>Add SCV</h3>
+    </div>
+
+    <div class="form">
+      <div>
+        <label>Name :</label>
+        <input type="text" placeholder="Enter Name" />
+      </div>
+      <p class="error-msg">Error</p>
+      <div>
+        <label>Email ID :</label>
+        <input type="text" placeholder="Enter Email ID" />
+      </div>
+
+      <div>
+        <label>Phone Number :</label>
+        <input type="text" placeholder="Enter Phone Number" />
+      </div>
+
+      <div>
+        <label>Address :</label>
+        <input type="text" placeholder="Enter Address" />
+      </div>
+
+      <div>
+        <label>Landmark :</label>
+        <input type="text" placeholder="Enter Landmark" />
+      </div>
+
+      <div>
+        <label>Pin code :</label>
+        <input type="text" placeholder="Enter Pin code" />
+      </div>
+
+      <div>
+        <label>Address Proof :</label>
+        <div class="choose-image">
+          <label for="image">Choose Image</label>
+          <input
+            style="display: none"
+            id="image"
+            type="file"
+            accept="image/png,image/jpg"
+          />
+          <p class="image-format">.png,.jpg</p>
+          <p class="file-name" *ngIf="popup">File name</p>
+        </div>
+      </div>
+
+      <div>
+        <label>ID Proof :</label>
+        <div class="choose-image">
+          <label for="image">Choose Image</label>
+          <input
+            style="display: none"
+            id="image"
+            type="file"
+            accept="image/png,image/jpg"
+          />
+          <p class="image-format">.png,.jpg</p>
+          <p class="file-name" *ngIf="popup">File name</p>
+        </div>
+      </div>
+
+      <div class="submit-btn">
+        <button>Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--cart is active popup -->
+
+<div class="popup" *ngIf="disablewarning">
+  <div class="popup-close"></div>
+  <div class="popup-container active-popup">
+    <div class="title"><h3>Cart is Active</h3></div>
+    <p>SCV IS Allocated With An Active Cart</p>
+    <div class="buttons">
+      <button class="back" (click)="closeWarning()">Back</button>
+      <button class="close-cart">Close Cart</button>
+    </div>
+  </div>
+</div>

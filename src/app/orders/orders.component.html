@@ -1,0 +1,530 @@
+<div class="main-container">
+  <div class="page-title">
+    <button class="add-order none">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9 8.5C9 8.77614 8.77614 9 8.5 9H5.5C5.22386 9 5 9.22386 5 9.5V10.5C5 10.7761 5.22386 11 5.5 11H8.5C8.77614 11 9 11.2239 9 11.5V14.5C9 14.7761 9.22386 15 9.5 15H10.5C10.7761 15 11 14.7761 11 14.5V11.5C11 11.2239 11.2239 11 11.5 11H14.5C14.7761 11 15 10.7761 15 10.5V9.5C15 9.22386 14.7761 9 14.5 9H11.5C11.2239 9 11 8.77614 11 8.5V5.5C11 5.22386 10.7761 5 10.5 5H9.5C9.22386 5 9 5.22386 9 5.5V8.5Z"
+          fill="#E5EDF0"
+        />
+      </svg>
+      Add SCV
+    </button>
+
+    <div class="title-name">
+      <h5>
+        <svg
+          width="20"
+          height="22"
+          viewBox="0 0 20 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.4833 14.6898L19.7448 15.4445C19.8226 15.4909 19.887 15.5567 19.9318 15.6354C19.9765 15.7141 20 15.803 20 15.8935C20 15.984 19.9765 16.0729 19.9318 16.1516C19.887 16.2303 19.8226 16.2961 19.7448 16.3426L10.5405 21.8505C10.3773 21.9483 10.1904 22 10 22C9.80957 22 9.62273 21.9483 9.4595 21.8505L0.255217 16.3426C0.177391 16.2961 0.112971 16.2303 0.0682413 16.1516C0.0235116 16.0729 0 15.984 0 15.8935C0 15.803 0.0235116 15.7141 0.0682413 15.6354C0.112971 15.5567 0.177391 15.4909 0.255217 15.4445L1.51674 14.6898L10 19.7665L18.4833 14.6898ZM18.4833 9.77008L19.7448 10.5248C19.8226 10.5712 19.887 10.637 19.9318 10.7157C19.9765 10.7944 20 10.8834 20 10.9738C20 11.0643 19.9765 11.1532 19.9318 11.2319C19.887 11.3106 19.8226 11.3764 19.7448 11.4229L10 17.2543L0.255217 11.4229C0.177391 11.3764 0.112971 11.3106 0.0682413 11.2319C0.0235116 11.1532 0 11.0643 0 10.9738C0 10.8834 0.0235116 10.7944 0.0682413 10.7157C0.112971 10.637 0.177391 10.5712 0.255217 10.5248L1.51674 9.77008L10 14.8468L18.4833 9.77008ZM10.5395 0.149485L19.7448 5.65743C19.8226 5.7039 19.887 5.7697 19.9318 5.8484C19.9765 5.9271 20 6.01602 20 6.10649C20 6.19695 19.9765 6.28587 19.9318 6.36457C19.887 6.44328 19.8226 6.50907 19.7448 6.55554L10 12.3869L0.255217 6.55554C0.177391 6.50907 0.112971 6.44328 0.0682413 6.36457C0.0235116 6.28587 0 6.19695 0 6.10649C0 6.01602 0.0235116 5.9271 0.0682413 5.8484C0.112971 5.7697 0.177391 5.7039 0.255217 5.65743L9.4595 0.149485C9.62273 0.0516738 9.80957 0 10 0C10.1904 0 10.3773 0.0516738 10.5405 0.149485H10.5395ZM10 2.26704L3.58429 6.10649L10 9.94593L16.4157 6.10649L10 2.26704Z"
+            fill="#004C6C"
+          />
+        </svg>
+        Orders
+      </h5>
+    </div>
+
+    <button class="add-stock">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9 8.5C9 8.77614 8.77614 9 8.5 9H5.5C5.22386 9 5 9.22386 5 9.5V10.5C5 10.7761 5.22386 11 5.5 11H8.5C8.77614 11 9 11.2239 9 11.5V14.5C9 14.7761 9.22386 15 9.5 15H10.5C10.7761 15 11 14.7761 11 14.5V11.5C11 11.2239 11.2239 11 11.5 11H14.5C14.7761 11 15 10.7761 15 10.5V9.5C15 9.22386 14.7761 9 14.5 9H11.5C11.2239 9 11 8.77614 11 8.5V5.5C11 5.22386 10.7761 5 10.5 5H9.5C9.22386 5 9 5.22386 9 5.5V8.5Z"
+          fill="#E5EDF0"
+        />
+      </svg>
+      Add Orders
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <tr class="table-header">
+        <th>Posted Date</th>
+        <th>Order Date</th>
+        <th>Order ID</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>21/02/2023</td>
+        <td>23/02/2023</td>
+        <td class="link">ODO001</td>
+        <td>Raised</td>
+        <td>
+          <button class="stock-it-btn">Stock It</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Raised Order Popup -->
+
+<div class="popup" *ngIf="false">
+  <div class="popup-close"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>ODO001</h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr class="table-header">
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price/kg</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>200 Kg</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="button">
+      <button class="back-btn">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- Acknowledge order Popup -->
+
+<div class="popup" *ngIf="false">
+  <div class="popup-close"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>ODO001</h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr class="table-header">
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price/kg</th>
+          <th>Revised Price/kg</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="button">
+      <button class="back-btn">Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- Loaded order Popup -->
+
+<div class="popup" *ngIf="false">
+  <div class="popup-close"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>ODO001</h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr class="table-header">
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Loaded</th>
+          <th>Price/kg</th>
+          <th>Revised Price/kg</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+
+        <tr>
+          <td>Onion</td>
+          <td>200 Kg</td>
+          <td>200 Kg</td>
+          <td>₹40</td>
+          <td>₹42</td>
+          <td>₹8000</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="button">
+      <button class="back-btn">Back</button>
+    </div>
+  </div>
+</div>

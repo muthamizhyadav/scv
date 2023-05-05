@@ -1,0 +1,87 @@
+.page-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+.cart-title {
+  width: 50%;
+  justify-content: right;
+  display: flex;
+}
+.edit-order-btn {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  margin-right: 54px;
+}
+
+.edit-order-btn button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.cart-title h5 {
+  color: #004c6c;
+  font-weight: 600;
+  font-family: "Poppins";
+  line-height: 36px;
+  height: fit-content;
+}
+.table-container table {
+  width: 94.5%;
+  margin: auto;
+  margin-top: 10px;
+}
+.table-container table thead {
+  background-color: #a6cfe0;
+  color: white;
+  border-radius: 4px;
+  font-family: "Poppins";
+}
+
+.table-container table thead th {
+  padding: 9px;
+  color: #004c6c;
+}
+.table-container table tbody tr {
+  background: white;
+}
+.table-container table tbody td {
+  padding: 9px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.ack-bottom {
+  background-color: white;
+  width: 91.8%;
+  height: 40px;
+  margin: auto;
+}
+
+.ack-bottom button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  margin-right: 20px;
+}
+.popup-container-Edit {
+  width: 40%;
+  margin: auto;
+  height: 30%;
+  background-color: #aacddc;
+}

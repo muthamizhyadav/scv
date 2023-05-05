@@ -1,0 +1,18 @@
+<div class="main-container2">
+  <div class="login-content">
+    <p>Welcome !</p>
+    <span>Verify your number</span>
+  </div>
+  <div class="login-forms" [formGroup]="VerifyForm">
+    <div class="input-login">
+      <label>otp:</label>
+      <input type="number" placeholder="Enter OTP" formControlName="OTP" />
+    </div>
+    <p class="err" *ngIf="submited && VerifyForm.get('OTP').invalid">
+      Enter Received OTP
+    </p>
+    <div class="login-btn">
+      <button (click)="VerifyAttempt()">Verify OTP</button>
+    </div>
+  </div>
+</div>

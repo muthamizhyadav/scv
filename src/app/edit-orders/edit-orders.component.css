@@ -1,0 +1,102 @@
+.page-title h5 {
+  padding-top: 15px;
+  text-align: center;
+  font-family: "Poppins";
+  color: #004c6c;
+  font-weight: 600;
+  height: fit-content;
+}
+.table-container table {
+  width: 94.5%;
+  margin: auto;
+  margin-top: 10px;
+}
+.table-container table thead {
+  background-color: #a6cfe0;
+  color: white;
+  border-radius: 4px;
+  font-family: "Poppins";
+}
+
+.table-container table thead th {
+  padding: 9px;
+  color: #004c6c;
+}
+.table-container table tbody tr {
+  background: white;
+}
+.table-container table tbody td {
+  padding: 9px;
+  border-bottom: 1px solid gainsboro;
+}
+.value-cntainer {
+  display: flex;
+}
+.value-cntainer .scv-left-minus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.value-cntainer .scv-right-plus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.value-cntainer .scv-left-value p {
+  width: 89px;
+  height: 29px;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 4px;
+}
+
+.value-container-partner {
+  display: flex;
+}
+
+.value-container-partner .partner-left-minus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.value-container-partner .partner-right-plus button {
+  height: 29px;
+  width: 30px;
+  border: none;
+  background-color: #004c6c;
+  border-radius: 3px;
+}
+.value-container-partner .partner-value {
+  width: 89px;
+  height: 29px;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 4px;
+}
+.submit-bottom-edit-orders button {
+  background-color: var(--blue);
+  color: white;
+  display: flex;
+  border: none;
+  padding: 5px 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  margin-right: 20px;
+}
+
+.submit-bottom-edit-orders {
+  background-color: white;
+  width: 91.8%;
+  height: 40px;
+  margin: auto;
+}

@@ -1,0 +1,119 @@
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    height: 80px;
+}
+
+
+.page-title .back{
+ cursor: pointer;
+}
+
+
+.title-name {
+    display: flex;
+    align-items: center;
+
+}
+
+.title-name h5 {
+    color: var(--blue);
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.attendance-container{
+    width: 97%;
+    margin: auto;
+}
+.date-slider{
+    background-color: #BFD2DA    ;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 5px;
+    height: 70px;
+    overflow-y:auto;
+}
+.date-slider::-webkit-scrollbar{
+    display: none;
+}
+.prev-date,.next-date{
+    border: none;
+    height: 70px;
+    width: 50px;
+    display: flex;
+    background:#BFD2DA    ;
+    align-items: center;
+    justify-content: center;
+z-index: 500;
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+
+}
+.prev-date{
+position: absolute;
+left: 0;
+}
+.next-date{
+    position: absolute;
+    right: 0;
+}
+.date-slider section{
+    width: 100%;
+    overflow-y: auto;
+    padding: 3px 0;
+    white-space: nowrap;
+}
+.date-slider section::-webkit-scrollbar{
+    display: none;
+}
+.dates{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+.dates span{
+    height: 60px;
+    min-width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0 10px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.16);
+}
+
+.attendance-detail{
+    background-color: white;
+    min-height:80vh;
+    padding-top: 30px;
+}
+.attendance-detail div{
+    display: flex;
+    margin: 10px 0 10px 50px;
+  
+}
+.attendance-detail div label{
+    min-width: 200px;
+    font-weight: 700;
+}
+.in-out{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.in-out span{
+    display: flex;
+    background-color: #E5EDF0    ;
+    padding: 5px 10px;
+    border-radius: 20px;
+    align-items: center;
+}
+.in-out span p{
+    margin: 0 5px;
+}

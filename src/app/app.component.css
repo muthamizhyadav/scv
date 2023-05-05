@@ -1,0 +1,12 @@
+
+.container-page{
+    display: flex;
+    min-height: 100%;
+}
+.container-page .sidebar{
+    width: 15%;
+    min-height: 100%;
+}
+.main-page{
+    width: 85%;
+}
