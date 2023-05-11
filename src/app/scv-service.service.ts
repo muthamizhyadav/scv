@@ -134,4 +134,11 @@ export class ScvServiceService {
       `${URL.baseURL}/v1/partnersetPrice/getOrdered/Products/${id}?date=${date}`
     );
   }
+
+  giveStock(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/updateAddOnStock`,
+      data
+    );
+  }
 }

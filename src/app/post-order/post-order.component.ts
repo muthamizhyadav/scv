@@ -80,7 +80,6 @@ export class PostOrderComponent implements OnInit {
     setTimeout(() => {
       this.service.AddedProduct(this.activeCartId).subscribe((e: any) => {
         this.addedProducts = e;
-       
       });
     }, 1000);
   }
@@ -144,6 +143,7 @@ export class PostOrderComponent implements OnInit {
     this.service.createPostOrder(data).subscribe((e: any) => {
       this.postProducts = [];
       this.fetchProducts();
+      this.route.navigateByUrl('/cart-order');
     });
   }
 

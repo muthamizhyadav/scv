@@ -13,6 +13,7 @@ export class AddonStockComponent implements OnInit {
   cartName: any;
   orderedProducts: any;
   date: any;
+  latestUpdateStock: any;
   constructor(private route: Router, private service: ScvServiceService) {}
   ngOnInit(): void {
     this.getCart();
@@ -35,7 +36,41 @@ export class AddonStockComponent implements OnInit {
           this.cartDetails = e.cartDetails;
           this.orderedProducts = e.values;
           this.cartName = this.cartDetails.cartName;
+          this.latestUpdateStock = this.cartDetails.latestUpdateStock;
         });
+    });
+  }
+
+  AddQTY(num: any, data: any) {
+    let item = data.given == null ? 0 : data.given;
+    if (num == -1) {
+      if (item.given == 0) {
+        item = 0;
+      } else {
+        item = item - 1;
+      }
+    }
+    if (num == 1) {
+      item = item + 1;
+    }
+    data.given = item;
+  }
+
+  changeAddQTY(e: any, data: any) {
+    data.given = parseInt(e.target.value);
+  }
+
+  submitFun() {
+    let data: any[] = [];
+    this.orderedProducts.map((e: any) => {
+      if (e.given) {
+        data.push(e);
+      }
+    });
+    // giveStock
+    this.service.giveStock(data).subscribe((e: any) => {
+      console.log(e);
+      this.getCart();
     });
   }
 

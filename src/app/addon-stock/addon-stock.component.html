@@ -53,7 +53,7 @@
         <th>
           <span
             ><p>Last Balance</p>
-            <p>(1 pm)</p></span
+            <p>({{ latestUpdateStock }})</p></span
           >
         </th>
         <th>Add on Stock</th>
@@ -63,11 +63,11 @@
         <td>{{ data.products.productTitle }}</td>
         <td>0 Kg</td>
         <td>{{ data.QTY }} Kg</td>
-        <td>0 Kg</td>
-        <td>0 Kg</td>
+        <td>{{ data.givenQTY }} Kg</td>
+        <td>{{ data.balanceQTY ? data.balanceQTY : 0 }} Kg</td>
         <td class="action">
           <span>
-            <button>
+            <button (click)="AddQTY(-1, data)">
               <svg
                 width="16"
                 height="16"
@@ -83,8 +83,12 @@
                 />
               </svg>
             </button>
-            <input type="text" />
-            <button>
+            <input
+              type="text"
+              [value]="data.given == null ? 0 : data.given"
+              (keyup)="changeAddQTY($event, data)"
+            />
+            <button (click)="AddQTY(1, data)">
               <svg
                 width="16"
                 height="16"
@@ -106,6 +110,6 @@
     </table>
   </div>
   <div class="submit-btn">
-    <button>Submit</button>
+    <button (click)="submitFun()">Submit</button>
   </div>
 </div>
