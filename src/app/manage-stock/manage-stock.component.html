@@ -181,7 +181,7 @@
     <div
       class="carts-card"
       *ngFor="let data of allocatedData; let i = index"
-      (click)="Route_Customer_Order()"
+      (click)="Route_Customer_Order(data._id)"
     >
       <h3 class="cart-name">{{ data.cartName }}</h3>
       <div class="cart-image">

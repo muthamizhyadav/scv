@@ -20,7 +20,11 @@ export class ManageStockComponent implements OnInit {
     });
   }
 
-  Route_Customer_Order() {
+  Route_Customer_Order(e: any) {
+    console.log(e);
+    let data = { cartId: e };
+    this.service.createActiveCart(data).subscribe((e:any)=>{
     this.route.navigateByUrl('/customer-order');
+    });
   }
 }

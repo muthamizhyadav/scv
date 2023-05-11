@@ -48,7 +48,7 @@ const routes: Routes = [
   { path: 'consolidated-orders', component: ConsolidatedOrdersComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'stockit', component: StockItComponent },
-  { path: 'set-selling-price', component: SetSellingPriceComponent },
+  { path: 'set-selling-price1', component: SetSellingPriceComponent },
   { path: 'stock-report', component: StockReportComponent },
   { path: 'sudden-order', component: SuddenOrderComponent },
   { path: 'cart-report', component: CartReportComponent },

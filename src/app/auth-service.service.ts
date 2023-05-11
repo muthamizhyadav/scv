@@ -21,4 +21,6 @@ export class AuthServiceService {
   login(data: any) {
     return this.http.post(`${URL.baseURL}/v1/scv/LoginCustomer`, data);
   }
+
+
 }
