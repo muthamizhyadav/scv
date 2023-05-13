@@ -11,10 +11,12 @@ export class CartOrderComponent implements OnInit {
   activeCartId: any;
   orderDetails: any;
   cartDetails: any;
+  date: any;
   constructor(private route: Router, private service: ScvServiceService) {}
   ngOnInit(): void {
     this.getActiveCart();
     // this.fetchOrderDetails();
+    this.dateOperations()
   }
 
   getActiveCart() {
@@ -23,9 +25,18 @@ export class CartOrderComponent implements OnInit {
       this.service.getOrders(this.activeCartId).subscribe((e: any) => {
         this.orderDetails = e.orders;
         this.cartDetails = e.cartDetails;
-        console.log(this.orderDetails);
       });
     });
+  }
+
+  currentDate = new Date();
+
+  dateOperations() {
+    const day = String(this.currentDate.getDate()).padStart(2, '0');
+    const month = String(this.currentDate.getMonth() + 1).padStart(2, '0');
+    const year = this.currentDate.getFullYear();
+    const formattedDate = `${day}/${month}/${year}`;
+    this.date = formattedDate;
   }
 
   // fetchOrderDetails() {

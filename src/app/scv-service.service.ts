@@ -64,6 +64,10 @@ export class ScvServiceService {
     return this.http.post(`${URL.baseURL}/v1/scv/Cart/Allocation/Scv`, data);
   }
 
+  getCartById(id: any) {
+    return this.http.get(`${URL.baseURL}/v1/scv/getScvCartbyId/${id}`);
+  }
+
   // Scv Attendance
   getAllScvAttendance() {
     return this.http.get(`${URL.baseURL}/v1/scv/SCV/Attendance/mange`);

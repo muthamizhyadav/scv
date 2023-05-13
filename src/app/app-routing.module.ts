@@ -30,6 +30,7 @@ import { SignupComponent } from './signup/signup.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CartOnComponent } from './cart-on/cart-on.component';
 
 const routes: Routes = [
   { path: 'manage-stock', component: ManageStockComponent },
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'otp-verify', component: VerifyOtpComponent },
   { path: 'set-password', component: SetPasswordComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'cart-on', component: CartOnComponent },
 ];
 
 @NgModule({

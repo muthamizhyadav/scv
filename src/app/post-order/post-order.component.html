@@ -17,7 +17,7 @@
     </button>
 
     <div class="title-name">
-      <h5>Cart Name</h5>
+      <h5>{{cartName}}</h5>
     </div>
 
     <button class="add-product" (click)="productClick()">
@@ -39,7 +39,7 @@
 
   <div class="table-container">
     <div class="date">
-      <button class="prev" (click)="dateChange(-1)">
+      <button class="prev">
         <svg
           width="22"
           height="24"
@@ -57,7 +57,7 @@
         </svg>
       </button>
       <p>{{ date }}</p>
-      <button class="next" (click)="dateChange(1)">
+      <button class="next">
         <svg
           width="22"
           height="24"
@@ -85,7 +85,7 @@
         <th>
           <span>
             <p>Post Order</p>
-            <sub> ({{ date }})</sub>
+            <sub> ({{ tomorrow }})</sub>
           </span>
         </th>
       </tr>

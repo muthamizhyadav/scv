@@ -195,3 +195,6 @@ table tr th span sub {
   border: none;
   cursor: pointer;
 }
+.action input {
+  text-align: center;
+}

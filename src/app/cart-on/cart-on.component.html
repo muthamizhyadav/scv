@@ -1,0 +1,19 @@
+<div class="main-container">
+  <div class="page-title">
+    <div class="on-caintainer">
+      <div class="content">
+        <p>{{ cartName }} ({{ formattedDate }}) Distribution</p>
+      </div>
+      <div class="switch-div">
+        <label class="switch">
+          <input
+            type="checkbox"
+            [checked]="true"
+            (change)="enableCart(cartId)"
+          />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

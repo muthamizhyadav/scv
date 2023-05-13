@@ -80,4 +80,8 @@ export class StockUpdateComponent implements OnInit {
   addOnRoute() {
     this.route.navigateByUrl('/addon-stock');
   }
+
+  closeStock() {
+    this.route.navigateByUrl('/closing-stock');
+  }
 }

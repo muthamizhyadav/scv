@@ -37,6 +37,7 @@ import { SignupComponent } from './signup/signup.component';
 import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { CartOnComponent } from './cart-on/cart-on.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     VerifyOtpComponent,
     SetPasswordComponent,
     ForgotPasswordComponent,
+    CartOnComponent,
   ],
   imports: [
     BrowserModule,

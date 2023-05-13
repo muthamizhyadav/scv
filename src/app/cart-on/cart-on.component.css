@@ -1,0 +1,23 @@
+.page-title .on-caintainer {
+  width: 100%;
+  display: flex;
+  padding-top: 3%;
+}
+
+.page-title .content {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+}
+.content p {
+  font-size: 17px !important;
+  font-family: "Poppins";
+  color: #004c6c;
+  font-weight: 700;
+}
+.page-title .switch-div {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  padding-right: 4%;
+}

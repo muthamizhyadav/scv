@@ -17,15 +17,16 @@ export class PostOrderComponent implements OnInit {
   addedProducts: any = [];
   postProducts: any = [];
   checkedval: any = false;
+  cartName: any;
   date: any;
   qty: any = 0;
+  tomorrow: any;
 
   activeCartId: any;
   ngOnInit(): void {
     this.fetchProducts();
     this.getActiveCart();
     this.FetchPost_OrderProduct();
-    this.fetchAddedProduct();
     this.dateOperations();
   }
 
@@ -54,6 +55,7 @@ export class PostOrderComponent implements OnInit {
     this.service.addProduct(products).subscribe((e: any) => {
       this.showProduct = false;
       this.list = false;
+      this.getActiveCart();
     });
   }
 
@@ -73,17 +75,15 @@ export class PostOrderComponent implements OnInit {
   getActiveCart() {
     this.service.getActiveCart().subscribe((e: any) => {
       this.activeCartId = e.cartId;
-    });
-  }
-  fetchAddedProduct() {
-    this.activeCartId;
-    setTimeout(() => {
       this.service.AddedProduct(this.activeCartId).subscribe((e: any) => {
         this.addedProducts = e;
       });
-    }, 1000);
+      this.service.getCartById(e.cartId).subscribe((e: any) => {
+        console.log(e);
+        this.cartName = e.cartName;
+      });
+    });
   }
-
   addProductQty(e: any, item: any) {
     let qty = item.qty == null ? 0 : item.qty;
     if (e == -1) {
@@ -109,24 +109,32 @@ export class PostOrderComponent implements OnInit {
     const month = String(this.date.getMonth() + 1).padStart(2, '0');
     const year = this.date.getFullYear();
     this.date = `${day}/${month}/${year}`;
+    // tomorrow
+    let currentDate = new Date();
+    const tDay = String(this.currentDate.getDate() + 1).padStart(2, '0');
+    const tmonth = String(this.currentDate.getMonth() + 1).padStart(2, '0');
+    const tyear = this.currentDate.getFullYear();
+    this.tomorrow = `${tDay}/${tmonth}/${tyear}`;
   }
 
   dateValue: any = 0;
   currentDate: any = new Date();
-  dateChange(method: any) {
-    if (method == -1) {
-      this.dateValue = this.dateValue - 1;
-      this.currentDate.setDate(this.currentDate.getDate() - 1);
-    }
-    if (method == 1) {
-      this.currentDate.setDate(this.currentDate.getDate() + 1);
-    }
-    const day = String(this.currentDate.getDate()).padStart(2, '0');
-    const month = String(this.currentDate.getMonth() + 1).padStart(2, '0');
-    const year = this.currentDate.getFullYear();
-    const formattedDate = `${day}/${month}/${year}`;
-    this.date = formattedDate;
-  }
+  // dateChange(method: any) {
+  //   if (method == -1) {
+  //     this.dateValue = this.dateValue - 1;
+  //     this.currentDate.setDate(this.currentDate.getDate() - 1);
+  //   }
+  //   if (method == 1) {
+  //     this.currentDate.setDate(this.currentDate.getDate() + 1);
+  //   }
+  //   const day = String(this.currentDate.getDate()).padStart(2, '0');
+  //   const month = String(this.currentDate.getMonth() + 1).padStart(2, '0');
+  //   const year = this.currentDate.getFullYear();
+  //   const formattedDate = `${day}/${month}/${year}`;
+  //   this.date = formattedDate;
+  // }
+
+  // addedProduct;
 
   postOrderSubmit() {
     this.addedProducts.map((e: any) => {
@@ -137,7 +145,7 @@ export class PostOrderComponent implements OnInit {
     const data = {
       products: this.postProducts,
       cartId: this.activeCartId,
-      date: this.date,
+      date: this.tomorrow,
     };
 
     this.service.createPostOrder(data).subscribe((e: any) => {

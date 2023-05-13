@@ -20,11 +20,22 @@ export class ManageStockComponent implements OnInit {
     });
   }
 
+  currentDate = new Date();
+  day = String(this.currentDate.getDate()).padStart(2, '0');
+  month = String(this.currentDate.getMonth() + 1).padStart(2, '0');
+  year = this.currentDate.getFullYear();
+  formattedDate = `${this.day}/${this.month}/${this.year}`;
+
   Route_Customer_Order(e: any) {
-    console.log(e);
     let data = { cartId: e };
-    this.service.createActiveCart(data).subscribe((e:any)=>{
-    this.route.navigateByUrl('/customer-order');
+    this.service.createActiveCart(data).subscribe((e: any) => {
+      this.service.getCartById(e.cartId).subscribe((data: any) => {
+        if (data.cartOnDate == this.formattedDate) {
+          this.route.navigateByUrl('/stock-update');
+        } else {
+          this.route.navigateByUrl('/cart-on');
+        }
+      });
     });
   }
 }
