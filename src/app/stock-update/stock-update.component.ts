@@ -35,7 +35,6 @@ export class StockUpdateComponent implements OnInit {
           this.cartDetails = e.cartDetails;
           this.orderedProducts = e.values;
           this.latestUpdateStock = this.cartDetails.latestUpdateStock;
-          console.log(this.cartDetails);
           this.cartName = this.cartDetails.cartName;
         });
     });

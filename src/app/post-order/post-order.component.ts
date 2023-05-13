@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ScvServiceService } from '../scv-service.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { ScvServiceService } from '../scv-service.service';
 })
 export class PostOrderComponent implements OnInit {
   numberOfDaysToAdd: any;
-  constructor(private route: Router, private service: ScvServiceService) {}
+  constructor(
+    private route: Router,
+    private service: ScvServiceService,
+    private Toast: ToastrService
+  ) {}
   showProduct: any = false;
   list: any = false;
   products: any;
@@ -135,6 +140,9 @@ export class PostOrderComponent implements OnInit {
   // }
 
   // addedProduct;
+  ErrorShow() {
+    this.Toast.error('Hello world!', 'Toastr fun!');
+  }
 
   postOrderSubmit() {
     this.addedProducts.map((e: any) => {
@@ -147,12 +155,18 @@ export class PostOrderComponent implements OnInit {
       cartId: this.activeCartId,
       date: this.tomorrow,
     };
-
-    this.service.createPostOrder(data).subscribe((e: any) => {
-      this.postProducts = [];
-      this.fetchProducts();
-      this.route.navigateByUrl('/cart-order');
-    });
+    this.service.createPostOrder(data).subscribe(
+      (e: any) => {
+        this.postProducts = [];
+        this.fetchProducts();
+        this.route.navigateByUrl('/cart-order');
+      },
+      (error) => {
+        if (error.status == 400) {
+          this.Toast.error(`Already ordered For this Date ${data.date}`);
+        }
+      }
+    );
   }
 
   productClick() {

@@ -40,7 +40,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { CartOnComponent } from './cart-on/cart-on.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ExampleInterceptor } from './Intercepter';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +85,12 @@ import { ExampleInterceptor } from './Intercepter';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ExampleInterceptor, multi: true },
