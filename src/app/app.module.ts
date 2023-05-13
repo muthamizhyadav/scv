@@ -38,6 +38,7 @@ import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 import { SetPasswordComponent } from './set-password/set-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CartOnComponent } from './cart-on/cart-on.component';
+import { LoaderComponent } from './loader/loader.component';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { CartOnComponent } from './cart-on/cart-on.component';
     SetPasswordComponent,
     ForgotPasswordComponent,
     CartOnComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
