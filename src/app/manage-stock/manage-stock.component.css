@@ -1,149 +1,147 @@
 .page-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 25px;
-    height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  height: 80px;
 }
 
-
 .date {
-    background-color: white;
-    width: fit-content;
-    display: flex;
-    padding: 5px 0;
-    justify-content: center;
-    min-width: 180px;
-    border-radius: 3px;
-    cursor: pointer !important;
-    position: relative;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  width: fit-content;
+  display: flex;
+  padding: 5px 0;
+  justify-content: center;
+  min-width: 180px;
+  border-radius: 3px;
+  cursor: pointer !important;
+  position: relative;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
 .prev-date {
-    background-color: var(--blue);
-    position: absolute;
-    left: 0;
-    height: 100%;
-    top: 0;
-    opacity: 0;
-    padding: 5px 8px;
-    transition: 0.2s all;
-
+  background-color: var(--blue);
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  padding: 5px 8px;
+  transition: 0.2s all;
 }
 
 .next-date {
-    background-color: var(--blue);
-    position: absolute;
-    right: 0;
-    height: 100%;
-    top: 0;
-    transition: 0.2s all;
+  background-color: var(--blue);
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  transition: 0.2s all;
 
-    opacity: 0;
-    padding: 5px 8px;
+  opacity: 0;
+  padding: 5px 8px;
 }
 
 .date:hover .next-date {
-    opacity: 1;
-    transition: 0.2s all;
+  opacity: 1;
+  transition: 0.2s all;
 }
 
 .date:hover .prev-date {
-    opacity: 1;
-    transition: 0.2s all;
-
+  opacity: 1;
+  transition: 0.2s all;
 }
 
 .date span {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .date span label {
-    margin-left: 5px;
-    font-weight: 700;
-    color: var(--blue);
+  margin-left: 5px;
+  font-weight: 700;
+  color: var(--blue);
 }
 
 .title-name {
-    display: flex;
-    align-items: center;
-
+  display: flex;
+  align-items: center;
 }
 
 .title-name h5 {
-    color: var(--blue);
-    font-size: 18px !important;
-    font-weight: 700;
-    margin-left: 5px;
+  color: var(--blue);
+  font-size: 18px !important;
+  font-weight: 700;
+  margin-left: 5px;
 }
 
 .carts-container {
-    padding: 0 25px 20px 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px 2.5%;
+  padding: 0 25px 20px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 2.5%;
 }
 
 .carts-card {
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    min-width: 23%;
-    max-width: 300px;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  min-width: 23%;
+  max-width: 300px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
 .carts-card .cart-image {
-    width: 80%;
-    border-radius: 100%;
-    overflow: hidden;
+  width: 80%;
+  border-radius: 100%;
+  overflow: hidden;
 }
 
 .carts-card .cart-image img {
-    width: 100%;
+  width: 100% !important;
+  object-fit: cover;
+  height: 100%;
 }
 
 .cart-name {
-    margin-bottom: 10px;
-    max-width: 200px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-weight: 700;
-    font-size: 16px !important;
+  margin-bottom: 10px;
+  max-width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 16px !important;
 }
 
 .updated-detail,
 .cart-location,
 .scv-name {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .updated-detail p,
 .cart-location p,
 .scv-name p {
-    margin-left: 5px;
-    max-width: 150px;
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  margin-left: 5px;
+  max-width: 150px;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .updated-detail {
-    min-width: fit-content !important;
+  min-width: fit-content !important;
 }
 
 .updated-detail p {
-    min-width: fit-content !important;
-    font-size: 12px !important;
+  min-width: fit-content !important;
+  font-size: 12px !important;
 }
