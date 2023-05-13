@@ -25,7 +25,7 @@ import { SetSellingPriceComponent } from './set-selling-price/set-selling-price.
 import { StockReportComponent } from './stock-report/stock-report.component';
 import { SuddenOrderComponent } from './sudden-order/sudden-order.component';
 import { CartReportComponent } from './cart-report/cart-report.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { AcknowledgeOrdersComponent } from './acknowledge-orders/acknowledge-orders.component';
@@ -39,7 +39,7 @@ import { SetPasswordComponent } from './set-password/set-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { CartOnComponent } from './cart-on/cart-on.component';
 import { LoaderComponent } from './loader/loader.component';
-
+import { ExampleInterceptor } from './Intercepter';
 
 @NgModule({
   declarations: [
@@ -85,7 +85,9 @@ import { LoaderComponent } from './loader/loader.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ExampleInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
