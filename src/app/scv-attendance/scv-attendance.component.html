@@ -19,7 +19,7 @@
       <h5>SCV Attendance</h5>
     </div>
 
-    <p class="date">02/02/2023</p>
+    <p class="date">{{ date }}</p>
   </div>
 
   <div class="table-container">
@@ -34,16 +34,28 @@
 
       <tr *ngFor="let scvAtt of attendanceData; let i = index">
         <td>{{ scvAtt.Name }}</td>
-        <td>{{ scvAtt.cart.cartName }}</td>
+        <td>
+          {{ scvAtt.cartName == null ? "Not Allocated" : scvAtt.cartName }}
+        </td>
         <td>
           <span
-            ><p>{{ scvAtt.cart.vehicleNumber }}</p>
-            <sub>({{ scvAtt.cart.vehicleName }})</sub></span
+            ><p>
+              {{
+                scvAtt.vehicleNumber == null
+                  ? "Not Allocated"
+                  : scvAtt.vehicleNumber
+              }}
+            </p>
+            <sub>({{ scvAtt.vehicleName }})</sub></span
           >
         </td>
         <td>
           <label class="switch">
-            <input type="checkbox" (change)="active_InActive_Change(i)" [checked]="checked(scvAtt.active)" />
+            <input
+              type="checkbox"
+              (change)="active_InActive_Change(i)"
+              [checked]="checked(scvAtt.active)"
+            />
             <span class="slider"></span>
           </label>
         </td>

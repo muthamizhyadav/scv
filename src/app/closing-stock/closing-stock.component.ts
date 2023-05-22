@@ -13,9 +13,11 @@ export class ClosingStockComponent implements OnInit {
   cartId: any;
   cartName: any;
   date: any;
+  orders: any;
   ngOnInit(): void {
     this.getCartDetails();
     this.Dateoperations();
+    this.cartDetails();
   }
 
   getCartDetails() {
@@ -36,6 +38,67 @@ export class ClosingStockComponent implements OnInit {
     const year = this.currentDate.getFullYear();
     const formattedDate = `${day}/${month}/${year}`;
     this.date = formattedDate;
+  }
+
+  cartDetails() {
+    this.service.getActiveCart().subscribe((e: any) => {
+      this.service
+        .getOrderedProducts(e.cartId, this.date)
+        .subscribe((e: any) => {
+          this.orders = e.values;
+        });
+    });
+  }
+
+  returnQty(e: any, data: any) {
+    let val = data.returnqty ? data.returnqty : 0;
+    if (e == -1) {
+      console.log(data, 'Decrease');
+      if (val == 0) {
+        val = 0;
+      } else {
+        val = val - 1;
+      }
+    }
+    if (e == 1) {
+      val = val + 1;
+    }
+    data.returnqty = val;
+  }
+
+  wastageQty(e: any, data: any) {
+    let val = data.wastageqty != null ? data.wastageqty : 0;
+    if (e == -1) {
+      if (val == 0) {
+        val = 0;
+      } else {
+        val = val - 1;
+      }
+    }
+    if (e == 1) {
+      val = val + 1;
+    }
+    data.wastageqty = val;
+  }
+
+  returnChangeqty(e: any, data: any) {
+    let value = parseInt(e.target.value);
+    data.returnqty = value;
+  }
+  wastageChangeqty(e: any, data: any) {
+    let value = parseInt(e.target.value);
+    data.wastageqty = value;
+  }
+
+  closeStockSubmit() {
+    let data: any[] = [];
+    this.orders.map((e: any) => {
+      if (e.returnqty || e.wastageqty) {
+        data.push(e);
+      }
+    });
+    console.log(data);
+    this.cartDetails()
   }
 
   backRoute() {

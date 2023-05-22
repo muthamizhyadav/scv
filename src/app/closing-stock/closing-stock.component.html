@@ -56,14 +56,14 @@
         <th>Sold kg</th>
       </tr>
 
-      <tr>
-        <td>Onion</td>
-        <td>50 Kg</td>
-        <td>20 Kg</td>
+      <tr *ngFor="let data of orders">
+        <td>{{ data.products.productTitle }}</td>
+        <td>{{ data.givenQTY ? data.givenQTY : 0 }} Kg</td>
+        <td>{{ data.onlineSale ? date.onlineSale : 0 }} Kg</td>
 
         <td class="action return">
           <span>
-            <button>
+            <button (click)="returnQty(-1, data)">
               <svg
                 width="16"
                 height="16"
@@ -79,8 +79,14 @@
                 />
               </svg>
             </button>
-            <input type="text" placeholder="Add" style="text-align: center;"/>
-            <button>
+            <input
+              type="text"
+              placeholder="Add"
+              style="text-align: center"
+              [value]="data.returnqty != null ? data.returnqty : 0"
+              (keyup)="returnChangeqty($event, data)"
+            />
+            <button (click)="returnQty(1, data)">
               <svg
                 width="16"
                 height="16"
@@ -101,7 +107,7 @@
 
         <td class="action wastage">
           <span>
-            <button>
+            <button (click)="wastageQty(-1, data)">
               <svg
                 width="16"
                 height="16"
@@ -117,8 +123,14 @@
                 />
               </svg>
             </button>
-            <input type="text" placeholder="Add" style="text-align: center;"/>
-            <button>
+            <input
+              type="text"
+              placeholder="Add"
+              style="text-align: center"
+              [value]="data.wastageqty != null ? data.wastageqty : 0"
+              (keyup)="wastageChangeqty($event, data)"
+            />
+            <button (click)="wastageQty(1, data)">
               <svg
                 width="16"
                 height="16"
@@ -136,11 +148,11 @@
             </button>
           </span>
         </td>
-        <td>150 Kg</td>
+        <td>{{ data.soldKG ? data.soldKG : 0 }} Kg</td>
       </tr>
     </table>
   </div>
   <div class="submit-btn">
-    <button>Submit</button>
+    <button (click)="closeStockSubmit()">Submit</button>
   </div>
 </div>
