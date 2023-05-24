@@ -34,7 +34,7 @@ export class CartOnComponent implements OnInit {
     console.log(cartId);
     let data = { cartOnDate: this.formattedDate };
     this.service.EditeScvCart(cartId, data).subscribe((e: any) => {
-      this.route.navigateByUrl('/post-order');
+      this.route.navigateByUrl('/stock-distribution');
     });
   }
 }

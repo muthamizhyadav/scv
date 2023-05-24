@@ -87,8 +87,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 1000,
-      positionClass: 'toast-top-right',
+      timeOut: 2000,
+      positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     }),
   ],

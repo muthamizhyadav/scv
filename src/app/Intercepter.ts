@@ -25,7 +25,6 @@ export class ExampleInterceptor implements HttpInterceptor {
   handler(next: any, request: any) {
     return next.handle(request).pipe(
       tap((e: any) => {
-        console.log(e);
         if (e instanceof HttpResponse) {
           setTimeout(() => {
             this.loderService.requestEnd();
@@ -38,6 +37,5 @@ export class ExampleInterceptor implements HttpInterceptor {
       }))
     );
 
-    return;
   }
 }

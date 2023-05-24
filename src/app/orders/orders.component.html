@@ -61,151 +61,11 @@
         <th>Action</th>
       </tr>
 
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
-        <td>
-          <button class="stock-it-btn">Stock It</button>
-        </td>
-      </tr>
-
-      <tr>
-        <td>21/02/2023</td>
-        <td>23/02/2023</td>
-        <td class="link">ODO001</td>
-        <td>Raised</td>
+      <tr *ngFor="let data of orders; let i = index">
+        <td>{{ data.Posted_date }}</td>
+        <td>{{ data.OrderedTo }}</td>
+        <td class="link" (click)="orderClick(i)">{{ data.orderId }}</td>
+        <td>{{ data.status == "Pending" ? "Raised" : data.status }}</td>
         <td>
           <button class="stock-it-btn">Stock It</button>
         </td>
@@ -216,11 +76,11 @@
 
 <!-- Raised Order Popup -->
 
-<div class="popup" *ngIf="false">
-  <div class="popup-close"></div>
+<div class="popup" *ngIf="viewOrder">
+  <div class="popup-close" (click)="closeOrder()"></div>
   <div class="popup-container">
     <div class="title">
-      <h3>ODO001</h3>
+      <h3>{{ singleorder.orderId }}</h3>
     </div>
     <div class="table-container">
       <table>
@@ -230,80 +90,17 @@
           <th>Price/kg</th>
           <th>Amount</th>
         </tr>
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>₹8000</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
-        </tr>
-
-        <tr>
-          <td>Onion</td>
-          <td>200 Kg</td>
-          <td>₹40</td>
-          <td>200 Kg</td>
+        <tr *ngFor="let data of singleorder.products">
+          <td>{{ data.productName }}</td>
+          <td>{{ data.totalqty }} Kg</td>
+          <td>₹{{ data.price }}</td>
+          <td>₹ {{ data.totalqty * data.price }}</td>
         </tr>
       </table>
     </div>
 
     <div class="button">
-      <button class="back-btn">Back</button>
+      <button class="back-btn" (click)="closeOrder()">Back</button>
     </div>
   </div>
 </div>

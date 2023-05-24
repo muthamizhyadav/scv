@@ -34,7 +34,7 @@
       <tbody>
         <tr *ngFor="let data of orderedProducts; let i = index">
           <td>{{ data.products.productTitle }}</td>
-          <td>{{ data.givenQTY }} kg</td>
+          <td>{{ data.dQTY }} kg</td>
           <td>{{ data.balanceQTY ? data.balanceQTY : 0 }} kg</td>
           <td>
             <div class="stock-upd-container">

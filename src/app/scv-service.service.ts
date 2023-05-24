@@ -97,6 +97,7 @@ export class ScvServiceService {
       }
     );
   }
+
   // active cart
   createActiveCart(data: any) {
     return this.http.post(
@@ -112,6 +113,21 @@ export class ScvServiceService {
       {
         headers: { auth: this.token },
       }
+    );
+  }
+
+  // distribution Api's
+
+  getOrderedProductByCart(cartId: any, date: any) {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/distributions/getOrder/For/CurrentDateByCart?cartId=${cartId}&date=${date}`
+    );
+  }
+
+  GiveStockForProducts(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/DistributeGIven`,
+      data
     );
   }
 
@@ -143,6 +159,40 @@ export class ScvServiceService {
     return this.http.post(
       `${URL.baseURL}/v1/partnersetPrice/updateAddOnStock`,
       data
+    );
+  }
+
+  // close Stock
+
+  closeStock(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/Return_Wastage_inCloseStock`,
+      data
+    );
+  }
+
+  // Partner Order Request Api's
+
+  getProducts_For_PartnerOrder(date: any) {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/getCart/Ordered/Products?date=${date}`
+    );
+  }
+
+  createOrdersFromAdmin(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/createPartnerOrder/FromAdmin`,
+      data,
+      { headers: { auth: this.token } }
+    );
+  }
+
+  getPartnerByPartner() {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/getOrders/ByPartner`,
+      {
+        headers: { auth: this.token },
+      }
     );
   }
 }

@@ -117,6 +117,7 @@ table tr th span sub{
     height: 30px;
     border: none;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.234);
+    text-align: center;
 }
 .submit-btn{
     width: 97%;

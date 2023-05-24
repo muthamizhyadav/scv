@@ -97,11 +97,16 @@ export class ClosingStockComponent implements OnInit {
         data.push(e);
       }
     });
+    const dataToServer = { cartId: this.cartId, arr: data };
     console.log(data);
-    this.cartDetails()
+    this.service.closeStock(dataToServer).subscribe((e: any) => {
+      this.cartDetails();
+      this.route.navigateByUrl('/manage-stock');
+    });
   }
-
   backRoute() {
     this.route.navigateByUrl('/stock-update');
   }
+
+ 
 }
