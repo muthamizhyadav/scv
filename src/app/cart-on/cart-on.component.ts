@@ -10,6 +10,7 @@ export class CartOnComponent implements OnInit {
   constructor(private service: ScvServiceService, private route: Router) {}
   cartName: any;
   cartId: any;
+  Attendance: any = false;
   ngOnInit(): void {
     this.getCart();
   }
@@ -33,8 +34,17 @@ export class CartOnComponent implements OnInit {
   enableCart(cartId: any) {
     console.log(cartId);
     let data = { cartOnDate: this.formattedDate };
-    this.service.EditeScvCart(cartId, data).subscribe((e: any) => {
-      this.route.navigateByUrl('/stock-distribution');
-    });
+    this.service.cartOn(cartId, data).subscribe(
+      (e: any) => {
+        this.route.navigateByUrl('/stock-distribution');
+        this.Attendance = false;
+      },
+      (err) => {
+        console.log(err.error.message);
+        if (err.error.message) {
+          this.Attendance = true;
+        }
+      }
+    );
   }
 }

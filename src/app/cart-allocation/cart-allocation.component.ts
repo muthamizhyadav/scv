@@ -60,6 +60,7 @@ export class CartAllocationComponent implements OnInit {
       this.showAllocateScv();
       this.showallocation = false;
     });
+    this.getAvailableSCV();
   }
 
   enableAddAlocation(i: any) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ScvServiceService } from '../scv-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ScvAttendanceComponent implements OnInit {
   attendanceData: any;
   disablewarning: any = false;
   date: any;
-  constructor(private service: ScvServiceService) {}
+  constructor(private service: ScvServiceService, private route: Router) {}
   ngOnInit(): void {
     this.fetchAllScvAttendace();
     this.Dateoperations();
@@ -36,10 +37,19 @@ export class ScvAttendanceComponent implements OnInit {
 
   active_InActive_Change(e: any) {
     let data = this.attendanceData[e];
-    console.log(data);
-    if (data.workingStatus == 'yes') {
-      this.disablewarning = true;
+    let status = '';
+    if (data.attendance == false) {
+      console.log('IN');
+      status = 'IN';
+    } else {
+      console.log('OUT');
+      status = 'OUT';
     }
+    const dataToserver = { type: status, scvId: data._id };
+    console.log(dataToserver);
+    this.service.UpdateAttendance(dataToserver).subscribe((e: any) => {
+      this.fetchAllScvAttendace();
+    });
   }
 
   currentDate = new Date();
@@ -55,5 +65,9 @@ export class ScvAttendanceComponent implements OnInit {
 
   closeWarning() {
     this.disablewarning = false;
+  }
+
+  report_Redirect(id: any) {
+    this.route.navigateByUrl(`scv-attendance-report?scvId=${id}`);
   }
 }

@@ -100,6 +100,7 @@ export class ManageScvComponent implements OnInit {
       this.disableSCV();
     }
   }
+
   disableSCV() {
     this.service
       .Active_InActive(this.id, { type: this.type })
@@ -185,6 +186,7 @@ export class ManageScvComponent implements OnInit {
       this.editShow = false;
     });
   }
+
   // popups
   AddSCVShow() {
     this.addscvformShow = true;

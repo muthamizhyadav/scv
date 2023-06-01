@@ -11,11 +11,15 @@ export class ScvServiceService {
   token: any = Cookie.get('token');
   // manage Scv Cart
   SendSCVFrm(data: any) {
-    return this.http.post(`${URL.baseURL}/v1/scv/Add/cart`, data);
+    return this.http.post(`${URL.baseURL}/v1/scv/Add/cart`, data, {
+      headers: { auth: this.token },
+    });
   }
   // fetch Cart
   getScvCarts() {
-    return this.http.get(`${URL.baseURL}/v1/scv/getScvCarts/All`);
+    return this.http.get(`${URL.baseURL}/v1/scv/getScvCarts/All`, {
+      headers: { auth: this.token },
+    });
   }
   // Remove Cart
 
@@ -28,14 +32,22 @@ export class ScvServiceService {
     return this.http.put(`${URL.baseURL}/v1/scv/updateSCVCart/${id}`, data);
   }
 
+  cartOn(id: any, data: any) {
+    return this.http.put(`${URL.baseURL}/v1/scv/cartOn/${id}`, data);
+  }
+
   // Manage SCV
 
   AddSCV(data: any) {
-    return this.http.post(`${URL.baseURL}/v1/scv/add/scv/byPartner`, data);
+    return this.http.post(`${URL.baseURL}/v1/scv/add/scv/byPartner`, data, {
+      headers: { auth: this.token },
+    });
   }
 
   getAllSCV() {
-    return this.http.get(`${URL.baseURL}/v1/scv/getAllScv/ByPartners`);
+    return this.http.get(`${URL.baseURL}/v1/scv/getAllScv/ByPartners`, {
+      headers: { auth: this.token },
+    });
   }
 
   Active_InActive(id: any, data: any) {
@@ -54,12 +66,17 @@ export class ScvServiceService {
 
   // Cart Allocation
   getNewAllocations() {
-    return this.http.get(`${URL.baseURL}/v1/scv/getcarts/Allocation`);
+    return this.http.get(`${URL.baseURL}/v1/scv/getcarts/Allocation`, {
+      headers: { auth: this.token },
+    });
   }
 
   getAvailableSCV() {
-    return this.http.get(`${URL.baseURL}/v1/scv/getAvailable/Scv`);
+    return this.http.get(`${URL.baseURL}/v1/scv/getAvailable/Scv`, {
+      headers: { auth: this.token },
+    });
   }
+
   CartAllocationToSCV(data: any) {
     return this.http.post(`${URL.baseURL}/v1/scv/Cart/Allocation/Scv`, data);
   }
@@ -70,7 +87,20 @@ export class ScvServiceService {
 
   // Scv Attendance
   getAllScvAttendance() {
-    return this.http.get(`${URL.baseURL}/v1/scv/SCV/Attendance/mange`);
+    return this.http.get(`${URL.baseURL}/v1/scv/SCV/Attendance/mange`, {
+      headers: { auth: this.token },
+    });
+  }
+
+  getScv_Attendance_Report(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/scv/getScv/Attendance/Reports`,
+      data
+    );
+  }
+
+  UpdateAttendance(data: any) {
+    return this.http.post(`${URL.baseURL}/v1/scv/scv/attendance`, data);
   }
 
   // fetch All Products

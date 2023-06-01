@@ -21,3 +21,7 @@
   justify-content: right;
   padding-right: 4%;
 }
+.att-err p {
+  text-align: center;
+  color: red;
+}

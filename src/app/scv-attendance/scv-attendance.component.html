@@ -54,12 +54,12 @@
             <input
               type="checkbox"
               (change)="active_InActive_Change(i)"
-              [checked]="checked(scvAtt.active)"
+              [checked]="scvAtt.attendance == true ? false : true"
             />
             <span class="slider"></span>
           </label>
         </td>
-        <td class="link">View Report</td>
+        <td class="link" (click)="report_Redirect(scvAtt._id)">View Report</td>
       </tr>
     </table>
   </div>
