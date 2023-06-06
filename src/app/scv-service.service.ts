@@ -225,4 +225,16 @@ export class ScvServiceService {
       }
     );
   }
+  updateBalanceStock(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/stockUpdateByCart`,
+      data
+    );
+  }
+
+  getCartReport(id: any) {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/getCartReports/${id}`
+    );
+  }
 }

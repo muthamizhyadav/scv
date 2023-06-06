@@ -67,11 +67,15 @@ export class StockUpdateComponent implements OnInit {
     this.orderedProducts.map((e: any) => {
       if (e.balanceqty) {
         data.push(e);
+      } else {
+        e.balanceqty = e.balanceqty ? e.balanceqty : 0;
+        data.push(e);
       }
     });
-    let serverData = { arr: data, message: message };
 
-    this.service.giveStock(serverData).subscribe((e: any) => {
+    let serverData = { arr: data, cartId: this.cartId };
+    console.log(serverData);
+    this.service.updateBalanceStock(serverData).subscribe((e: any) => {
       this.getCart();
     });
   }

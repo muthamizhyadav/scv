@@ -1,338 +1,146 @@
 <div class="main-container">
+  <div class="page-title">
+    <button class="add-order none">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9 8.5C9 8.77614 8.77614 9 8.5 9H5.5C5.22386 9 5 9.22386 5 9.5V10.5C5 10.7761 5.22386 11 5.5 11H8.5C8.77614 11 9 11.2239 9 11.5V14.5C9 14.7761 9.22386 15 9.5 15H10.5C10.7761 15 11 14.7761 11 14.5V11.5C11 11.2239 11.2239 11 11.5 11H14.5C14.7761 11 15 10.7761 15 10.5V9.5C15 9.22386 14.7761 9 14.5 9H11.5C11.2239 9 11 8.77614 11 8.5V5.5C11 5.22386 10.7761 5 10.5 5H9.5C9.22386 5 9 5.22386 9 5.5V8.5Z"
+          fill="#E5EDF0"
+        />
+      </svg>
+      Add SCV
+    </button>
 
-    <div class="page-title">
+    <div class="title-name">
+      <h5>{{ cartName }}</h5>
+    </div>
 
-        <button class="add-order none">
+    <div class="date">
+      <div class="prev-date">
+        <svg
+          width="11"
+          height="20"
+          viewBox="0 0 11 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4.03017 10.0004L10.4991 16.8907C11.167 17.6022 11.167 18.7557 10.4991 19.4672C9.83113 20.1787 8.74816 20.1787 8.0802 19.4672L0.501028 11.3943C0.141951 11.0118 -0.0240948 10.5016 0.00288898 10.001C-0.0243991 9.49999 0.141627 8.9893 0.500968 8.60655L8.08014 0.533605C8.7481 -0.177868 9.83107 -0.177868 10.499 0.533605C11.167 1.24508 11.167 2.3986 10.499 3.11008L4.03017 10.0004Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+      <span
+        ><svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.16667 1V3.5M16.8333 1V3.5M1 18.5V6C1 5.33696 1.26339 4.70107 1.73223 4.23223C2.20107 3.76339 2.83696 3.5 3.5 3.5H18.5C19.163 3.5 19.7989 3.76339 20.2678 4.23223C20.7366 4.70107 21 5.33696 21 6V18.5M1 18.5C1 19.163 1.26339 19.7989 1.73223 20.2678C2.20107 20.7366 2.83696 21 3.5 21H18.5C19.163 21 19.7989 20.7366 20.2678 20.2678C20.7366 19.7989 21 19.163 21 18.5M1 18.5V10.1667C1 9.50363 1.26339 8.86774 1.73223 8.3989C2.20107 7.93006 2.83696 7.66667 3.5 7.66667H18.5C19.163 7.66667 19.7989 7.93006 20.2678 8.3989C20.7366 8.86774 21 9.50363 21 10.1667V18.5"
+            stroke="#004C6C"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+        ><label for="date">03-03-2023</label>
+      </span>
 
-            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="next-date">
+        <svg
+          width="11"
+          height="20"
+          viewBox="0 0 11 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M6.97038 9.99986L0.500968 16.8907C-0.166989 17.6022 -0.166989 18.7557 0.500968 19.4672C1.16892 20.1787 2.2519 20.1787 2.91985 19.4672L10.499 11.3943C10.8559 11.0141 11.0222 10.5077 10.9976 10.01C11.0274 9.50612 10.8616 8.9916 10.5001 8.60655L2.92089 0.533605C2.25293 -0.177868 1.16996 -0.177868 0.502004 0.533605C-0.165953 1.24508 -0.165952 2.3986 0.502005 3.11008L6.97038 9.99986Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <!-- header -->
+      <tr class="table-header">
+        <td class="product">
+          <div>
+            <span>Product</span
+            ><button>
+              <svg
+                width="12"
+                height="22"
+                viewBox="0 0 12 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                    d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM9 8.5C9 8.77614 8.77614 9 8.5 9H5.5C5.22386 9 5 9.22386 5 9.5V10.5C5 10.7761 5.22386 11 5.5 11H8.5C8.77614 11 9 11.2239 9 11.5V14.5C9 14.7761 9.22386 15 9.5 15H10.5C10.7761 15 11 14.7761 11 14.5V11.5C11 11.2239 11.2239 11 11.5 11H14.5C14.7761 11 15 10.7761 15 10.5V9.5C15 9.22386 14.7761 9 14.5 9H11.5C11.2239 9 11 8.77614 11 8.5V5.5C11 5.22386 10.7761 5 10.5 5H9.5C9.22386 5 9 5.22386 9 5.5V8.5Z"
-                    fill="#E5EDF0" />
+                  d="M11 21L1 11L11 1"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </td>
+        <td *ngFor="let val of times" #widgetsContent>{{ val }}</td>
+        <td class="right">
+          <button>
+            <svg
+              width="12"
+              height="22"
+              viewBox="0 0 12 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.999998 1L11 11L1 21"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
-            Add SCV </button>
-
-        <div class="title-name">
-
-            <h5>Cart Name </h5>
-        </div>
-
-        <div class="date">
-            <div class="prev-date"><svg width="11" height="20" viewBox="0 0 11 20" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M4.03017 10.0004L10.4991 16.8907C11.167 17.6022 11.167 18.7557 10.4991 19.4672C9.83113 20.1787 8.74816 20.1787 8.0802 19.4672L0.501028 11.3943C0.141951 11.0118 -0.0240948 10.5016 0.00288898 10.001C-0.0243991 9.49999 0.141627 8.9893 0.500968 8.60655L8.08014 0.533605C8.7481 -0.177868 9.83107 -0.177868 10.499 0.533605C11.167 1.24508 11.167 2.3986 10.499 3.11008L4.03017 10.0004Z"
-                        fill="white" />
-                </svg>
-            </div>
-            <span><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M5.16667 1V3.5M16.8333 1V3.5M1 18.5V6C1 5.33696 1.26339 4.70107 1.73223 4.23223C2.20107 3.76339 2.83696 3.5 3.5 3.5H18.5C19.163 3.5 19.7989 3.76339 20.2678 4.23223C20.7366 4.70107 21 5.33696 21 6V18.5M1 18.5C1 19.163 1.26339 19.7989 1.73223 20.2678C2.20107 20.7366 2.83696 21 3.5 21H18.5C19.163 21 19.7989 20.7366 20.2678 20.2678C20.7366 19.7989 21 19.163 21 18.5M1 18.5V10.1667C1 9.50363 1.26339 8.86774 1.73223 8.3989C2.20107 7.93006 2.83696 7.66667 3.5 7.66667H18.5C19.163 7.66667 19.7989 7.93006 20.2678 8.3989C20.7366 8.86774 21 9.50363 21 10.1667V18.5"
-                        stroke="#004C6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg><label for="date">03-03-2023</label>
-            </span>
-
-            <div class="next-date">
-                <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M6.97038 9.99986L0.500968 16.8907C-0.166989 17.6022 -0.166989 18.7557 0.500968 19.4672C1.16892 20.1787 2.2519 20.1787 2.91985 19.4672L10.499 11.3943C10.8559 11.0141 11.0222 10.5077 10.9976 10.01C11.0274 9.50612 10.8616 8.9916 10.5001 8.60655L2.92089 0.533605C2.25293 -0.177868 1.16996 -0.177868 0.502004 0.533605C-0.165953 1.24508 -0.165952 2.3986 0.502005 3.11008L6.97038 9.99986Z"
-                        fill="white" />
-                </svg>
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="table-container">
-        <table>
-            <!-- header -->
-            <tr  class="table-header">
-                <td  class="product">
-                    <div>
-                        <span>Product</span><button ><svg width="12" height="22" viewBox="0 0 12 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11 21L1 11L11 1" stroke="white" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </td>
-                <td #widgetsContent>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td>08.00 AM</td>
-                <td>09.00 AM</td>
-                <td class="right"><button><svg width="12" height="22" viewBox="0 0 12 22" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.999998 1L11 11L1 21" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </button></td>
-
-            </tr>
-
-            <tr>
-                <td class="product product-name">Onion</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-            <tr>
-                <td class="product product-name">Product</td>
-                <td>30 Kg</td>
-                <td>45 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>45 Kg</td>
-                <td>20 Kg</td>
-                <td>35 Kg</td>
-                <td>50 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-                <td>50 Kg</td>
-                <td>15 Kg</td>
-                <td>10 Kg</td>
-                <td>25 Kg</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-
+          </button>
+        </td>
+      </tr>
+      <tr *ngFor="let data of products">
+        <td class="product product-name">
+          {{ data.productName }}
+        </td>
+        <td *ngFor="let val of data.report">{{ val.qty }}</td>
+        <!-- <td>50 Kg</td>
+        <td>15 Kg</td>
+        <td>10 Kg</td>
+        <td>25 Kg</td>
+        <td>45 Kg</td>
+        <td>20 Kg</td>
+        <td>35 Kg</td>
+        <td>50 Kg</td>
+        <td>10 Kg</td>
+        <td>25 Kg</td>
+        <td>50 Kg</td>
+        <td>15 Kg</td>
+        <td>10 Kg</td>
+        <td>25 Kg</td> -->
+      </tr>
+    </table>
+  </div>
 </div>

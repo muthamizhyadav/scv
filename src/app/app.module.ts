@@ -42,6 +42,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { ExampleInterceptor } from './Intercepter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AccountReconcileComponent } from './account-reconcile/account-reconcile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { ToastrModule } from 'ngx-toastr';
     ForgotPasswordComponent,
     CartOnComponent,
     LoaderComponent,
+    AccountReconcileComponent,
   ],
   imports: [
     BrowserModule,

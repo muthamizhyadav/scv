@@ -74,7 +74,11 @@ export class StockDistributionComponent implements OnInit {
         arr.push(e);
       }
     });
-    let serverData = { arr: arr };
+    let serverData = {
+      arr: arr,
+      cartId: this.cartId,
+      cartOnDate: this.formattedDate,
+    };
     this.service.GiveStockForProducts(serverData).subscribe((e: any) => {
       console.log(e);
       this.route.navigateByUrl('/stock-update');

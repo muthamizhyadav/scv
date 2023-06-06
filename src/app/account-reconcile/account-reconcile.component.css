@@ -1,0 +1,147 @@
+.pagen-title {
+  width: 50%;
+  /* margin: auto; */
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-in-title span {
+  font-family: "Poppins";
+  font-size: 20px !important;
+  font-weight: 600;
+  color: #004c6c;
+}
+
+.table-container {
+  width: 97%;
+  margin: auto;
+  margin-top: 25px;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+.view {
+  text-decoration: underline;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  background-color: white;
+  table-layout: fixed;
+  max-height: 500px;
+  overflow-y: auto;
+  position: relative;
+}
+table tr {
+  height: 50px;
+  border-bottom: solid rgba(128, 128, 128, 0.5) 1px;
+}
+table tr th,
+table tr td {
+  padding-left: 20px;
+}
+table tr th span {
+  display: flex !important;
+  align-items: flex-end;
+}
+table tr td span {
+  display: flex;
+  align-items: center;
+}
+table tr th span sub {
+  font-size: 10px !important;
+}
+.table-header {
+  background-color: #bfd2da;
+  color: var(--blue);
+  position: sticky;
+  top: 0;
+}
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+.paid-amt {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.pay-btn button {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  background: rgba(95, 144, 79, 0.25);
+  color: #5f904f;
+  font-weight: 700;
+}
+
+.popup .title {
+  width: 700px;
+  margin: auto;
+}
+.popup .title h3 {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px !important;
+  font-family: "Poppins";
+  color: #004c6c;
+  font-weight: 700;
+}
+
+.popup .options {
+  width: 90%;
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.popup .options div {
+  width: 30%;
+  padding-bottom: 10px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.popup .options div label {
+  padding-left: 20px;
+  font-size: 15px !important;
+  font-family: "Poppins";
+  color: black;
+  cursor: pointer;
+}
+.popup .buttons {
+  width: 150px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.popup .buttons button {
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
+  background-color: #004c6c;
+  color: white;
+}
+.table-container-popup {
+  max-width: 700px;
+  margin-top: 10px;
+}
+.popup .table-header {
+  height: 35px;
+}
+.popup .td-content {
+  height: 30px;
+}
+.popup .button {
+  width: 150px;
+  margin: auto;
+}
+
+.popup .button button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  background-color: #004c6c;
+  color: white;
+}
