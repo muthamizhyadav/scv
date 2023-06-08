@@ -54,13 +54,12 @@ export class CartAllocationComponent implements OnInit {
       cartId: this.cartid,
       scvName: this.scvName,
     };
+    // this.showallocation = false;
     this.service.CartAllocationToSCV(datas).subscribe((e: any) => {
-      this.availableSCV();
-      this.getNewAllocation();
-      this.showAllocateScv();
       this.showallocation = false;
+      this.getNewAllocation();
+      this.getAvailableSCV();
     });
-    this.getAvailableSCV();
   }
 
   enableAddAlocation(i: any) {
