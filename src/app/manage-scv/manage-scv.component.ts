@@ -54,7 +54,9 @@ export class ManageScvComponent implements OnInit {
     this.idFile = e.target.files[0];
     console.log(e);
   }
+  submit = false;
   submitForm() {
+    this.submit = true;
     let formData: any = new FormData();
     let phoneNumber = parseInt(this.scvForms.get('phoneNumber').value);
     formData.append('Name', this.scvForms.get('Name').value);
@@ -76,6 +78,7 @@ export class ManageScvComponent implements OnInit {
     this.service.getAllSCV().subscribe((e: any) => {
       this.Allscv = e;
       console.log(e);
+      this.submit = false;
     });
   }
 

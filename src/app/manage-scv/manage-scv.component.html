@@ -149,7 +149,9 @@
         <label>Name :</label>
         <input type="text" placeholder="Enter Name" formControlName="Name" />
       </div>
-      <p class="error-msg">Error</p>
+      <p class="error-msg" *ngIf="submit && scvForms.get('Name').invalid">
+        Error
+      </p>
       <div>
         <label>Email ID :</label>
         <input
@@ -158,6 +160,9 @@
           formControlName="email"
         />
       </div>
+      <p class="error-msg" *ngIf="submit && scvForms.get('email').invalid">
+        Error
+      </p>
 
       <div>
         <label>Phone Number :</label>
@@ -167,6 +172,12 @@
           formControlName="phoneNumber"
         />
       </div>
+      <p
+        class="error-msg"
+        *ngIf="submit && scvForms.get('phoneNumber').invalid"
+      >
+        Error
+      </p>
 
       <div>
         <label>Address :</label>
@@ -176,6 +187,9 @@
           formControlName="address"
         />
       </div>
+      <p class="error-msg" *ngIf="submit && scvForms.get('address').invalid">
+        Error
+      </p>
 
       <div>
         <label>Landmark :</label>
@@ -185,7 +199,9 @@
           formControlName="landMark"
         />
       </div>
-
+      <p class="error-msg" *ngIf="submit && scvForms.get('landMark').invalid">
+        Error
+      </p>
       <div>
         <label>Pin code :</label>
         <input
@@ -194,7 +210,9 @@
           formControlName="pinCode"
         />
       </div>
-
+      <p class="error-msg" *ngIf="submit && scvForms.get('pinCode').invalid">
+        Error
+      </p>
       <div>
         <label>Address Proof :</label>
         <div class="choose-image">
@@ -209,21 +227,26 @@
           <p class="image-format">.png,.jpg</p>
           <p class="file-name" *ngIf="false">File name</p>
         </div>
+        <p
+          class="error-msg"
+          *ngIf="submit && scvForms.get('addreddProof').invalid"
+        >
+          Error
+        </p>
       </div>
 
       <div>
         <label>ID Proof :</label>
         <div class="choose-image" (change)="IdfileChangeFun($event)">
           <label for="image">Choose Image</label>
-          <input
-            id="image"
-            type="file"
-            accept="image/png,image/jpg"
-          />
+          <input id="image" type="file" accept="image/png,image/jpg" />
           <p class="image-format">.png,.jpg</p>
           <p class="file-name" *ngIf="false">File name</p>
         </div>
       </div>
+      <p class="error-msg" *ngIf="submit && scvForms.get('idProof').invalid">
+        Error
+      </p>
       <div class="submit-btn">
         <button (click)="submitForm()">Submit</button>
       </div>
