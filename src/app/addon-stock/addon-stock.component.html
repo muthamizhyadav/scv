@@ -63,7 +63,9 @@
         <td>{{ data.products.productTitle }}</td>
         <td>0 Kg</td>
         <td>{{ data.QTY }} Kg</td>
-        <td>{{ data.givenQTY }} Kg</td>
+        <td>
+          {{ data.dQTY ? data.dQTY : 0 + data.givenQTY ? data.givenQTY : 0 }} Kg
+        </td>
         <td>{{ data.balanceQTY ? data.balanceQTY : 0 }} Kg</td>
         <td class="action">
           <span>

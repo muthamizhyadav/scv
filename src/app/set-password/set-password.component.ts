@@ -31,13 +31,13 @@ export class SetPasswordComponent implements OnInit {
         this.confirmPWD = true;
       } else {
         this.confirmPWD = false;
+        this.service
+          .SetPassword(this.SetPassWordForm.value)
+          .subscribe((e: any) => {
+            this.route.navigateByUrl('/');
+          });
+        console.log(this.SetPassWordForm.value);
       }
-      this.service
-        .SetPassword(this.SetPassWordForm.value)
-        .subscribe((e: any) => {
-          this.route.navigateByUrl('/');
-        });
-      console.log(this.SetPassWordForm.value);
     }
   }
 }

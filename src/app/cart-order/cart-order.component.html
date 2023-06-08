@@ -50,7 +50,9 @@
       <tr *ngFor="let data of orderDetails; let i = index">
         <td>{{ data.createdAt | date : "dd/MM/YYYY" }}</td>
         <td>{{ data.date }}</td>
-        <td>{{ data.orderId }}</td>
+        <td class="orderClick" (click)="orderClick(i, data.orderId)">
+          {{ data.orderId }}
+        </td>
         <td>{{ data.status == "Pending" ? "ordered" : data.status }}</td>
       </tr>
     </table>
@@ -130,6 +132,31 @@
       <div class="submit-btn">
         <button>Submit</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- orderId click popup -->
+
+<div class="popup" *ngIf="orderShow">
+  <div class="popup-close" (click)="orderShowCLose()"></div>
+  <div class="popup-container">
+    <div class="popup-title">
+      <p>{{ orderId }}</p>
+    </div>
+    <div class="popup-table-container">
+      <table>
+        <tr class="table-header">
+          <th>product</th>
+          <th>Requested KG</th>
+          <th>Given KG</th>
+        </tr>
+        <tr *ngFor="let data of individualOrder">
+          <td>{{ data.productName }}</td>
+          <td>{{ data.QTY }} KG</td>
+          <td>{{ data.dQTY ? data.dQTY : 0 }} KG</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

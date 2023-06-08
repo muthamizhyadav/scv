@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import 'ngx-toastr/toastr';
+@import "ngx-toastr/toastr";
 * {
   margin: 0;
   padding: 0;
@@ -104,6 +104,8 @@ table tr td {
   max-height: 90vh;
   overflow-y: auto;
   background-color: #e5edf0;
+  min-width: 700px;
+  min-height: 500px;
 }
 
 .popup-container::-webkit-scrollbar {

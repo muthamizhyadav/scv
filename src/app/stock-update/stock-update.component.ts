@@ -80,6 +80,8 @@ export class StockUpdateComponent implements OnInit {
     });
   }
 
+  orderClick(i: any) {}
+
   addOnRoute() {
     this.route.navigateByUrl('/addon-stock');
   }
@@ -87,4 +89,6 @@ export class StockUpdateComponent implements OnInit {
   closeStock() {
     this.route.navigateByUrl('/closing-stock');
   }
+
+ 
 }

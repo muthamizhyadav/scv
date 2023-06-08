@@ -58,7 +58,12 @@
 
       <tr *ngFor="let data of orders">
         <td>{{ data.products.productTitle }}</td>
-        <td>{{ data.givenQTY ? data.givenQTY : 0 }} Kg</td>
+        <td>
+          {{
+            (data.givenQTY ? data.givenQTY : 0) + (data.dQTY ? data.dQTY : 0)
+          }}
+          Kg
+        </td>
         <td>{{ data.onlineSale ? date.onlineSale : 0 }} Kg</td>
 
         <td class="action return">

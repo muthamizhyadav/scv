@@ -12,11 +12,14 @@ export class CartOrderComponent implements OnInit {
   orderDetails: any;
   cartDetails: any;
   date: any;
+  individualOrder: any;
+  orderShow: any = false;
+
   constructor(private route: Router, private service: ScvServiceService) {}
   ngOnInit(): void {
     this.getActiveCart();
     // this.fetchOrderDetails();
-    this.dateOperations()
+    this.dateOperations();
   }
 
   getActiveCart() {
@@ -44,6 +47,17 @@ export class CartOrderComponent implements OnInit {
   //     console.log(e);
   //   });
   // }
+  orderId: any;
+  orderClick(i: any, odId: any) {
+    this.orderShow = true;
+    this.orderId = odId;
+    this.individualOrder = this.orderDetails[i].ordersDetails;
+    console.log(this.individualOrder);
+  }
+
+  orderShowCLose() {
+    this.orderShow = false;
+  }
 
   postOrderRoute() {
     this.route.navigateByUrl('/post-order');

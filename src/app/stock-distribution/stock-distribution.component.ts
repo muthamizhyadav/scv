@@ -81,7 +81,7 @@ export class StockDistributionComponent implements OnInit {
     };
     this.service.GiveStockForProducts(serverData).subscribe((e: any) => {
       console.log(e);
-      this.route.navigateByUrl('/stock-update');
+      this.route.navigateByUrl('/manage-stock');
     });
   }
 }

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ManageStockComponent implements OnInit {
   allocatedData: any;
+  today: any;
   constructor(private service: ScvServiceService, private route: Router) {}
   ngOnInit(): void {
     this.AllocationData();

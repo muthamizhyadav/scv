@@ -16,13 +16,15 @@ export class ConsolidatedOrdersComponent implements OnInit {
   showError: any = false;
   qtyCount: any = 0;
   priceCount: any = 0;
+  showProduct: any = false;
+  AllProducts: any[] = [];
   constructor(
     private route: Router,
     private service: ScvServiceService,
     private Toast: ToastrService
   ) {}
 
-  products: any;
+  products: any[] = [];
 
   ngOnInit(): void {
     this.dateoperation();
@@ -122,6 +124,7 @@ export class ConsolidatedOrdersComponent implements OnInit {
         data.push(e);
       }
     });
+
     let serverData = {
       arr: data,
       todayDate: this.today,
@@ -133,6 +136,7 @@ export class ConsolidatedOrdersComponent implements OnInit {
         this.showError = false;
         this.closePreview();
         this.getProducts();
+        this.orderRoute()
       });
     } else {
       this.showError = true;
@@ -143,10 +147,76 @@ export class ConsolidatedOrdersComponent implements OnInit {
     this.route.navigateByUrl('/orders');
   }
 
+  dummyProduct: any;
+  dum: any;
+  FetchProduct() {
+    this.service.FetchProduct().subscribe((e: any) => {
+      e.map((a: any) => {
+        let findind = this.products.findIndex((w: any) => {
+          return w.productId == a._id;
+        });
+        if (findind == -1) {
+          this.AllProducts.push(a);
+        }
+      });
+    });
+  }
+
+  clickProduct() {
+    this.showProduct = true;
+    this.FetchProduct();
+  }
+
+  tempData: any[] = [];
+
+  selectProduct(e: any, productName: any) {
+    let ind = this.products.findIndex((a: any) => {
+      return a.productId == e;
+    });
+    if (ind == -1) {
+      this.products.push({
+        productId: e,
+        productName: productName,
+        scvKG: 0,
+      });
+    }
+    if (ind != -1) {
+      this.products.splice(ind, 1);
+      console.log('splice');
+    }
+  }
+
+  addProd() {
+    console.log(this.tempData);
+    this.products = this.products.concat(this.tempData);
+    this.showProduct = false;
+    // this.tempData = [];
+  }
+
+  Checked(id: any) {
+    let val = this.products.findIndex((a: any) => {
+      return a.productId == id;
+    });
+    if (val != -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  list: any = false;
+
+  onSelectionChange() {
+    this.list = !this.list;
+  }
+
   PreviewOrders() {
     this.orderView = true;
   }
   closePreview() {
     this.orderView = false;
+  }
+  clostProduct() {
+    this.showProduct = false;
   }
 }

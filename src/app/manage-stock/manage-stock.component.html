@@ -202,7 +202,12 @@
             fill="#3C4048"
           />
         </svg>
-        <p>Last Update 35 mins ago</p>
+        <p *ngIf="data.cartOnDate == formattedDate">
+          {{ data.latestUpdateStock }}
+        </p>
+        <p *ngIf="data.cartOnDate !== formattedDate" style="color: red;">
+          Offline
+        </p>
       </span>
       <span class="cart-location">
         <svg

@@ -25,8 +25,8 @@ export class CartReportComponent implements OnInit {
       });
       this.service.getCartReport(this.cartId).subscribe((e: any) => {
         console.log(e);
-        this.times = e[0].times;
-        this.products = e[0].orders;
+        this.times = e[0].time;
+        this.products = e[0].products;
       });
     });
   }
