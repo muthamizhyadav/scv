@@ -75,6 +75,7 @@ export class ManageCartComponent implements OnInit {
   fetchCart() {
     this.service.getScvCarts().subscribe((e: any) => {
       this.AllCArts = e;
+      this.submit = false;
     });
   }
 
