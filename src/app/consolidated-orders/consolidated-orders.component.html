@@ -142,11 +142,11 @@
           </tr>
 
           <tr *ngFor="let price of products">
-            <td>{{ price.productName }}</td>
-            <td>{{ price.scvKG }} Kg</td>
-            <td>0 Kg</td>
-            <td>{{ price.totalqty }} Kg</td>
-            <td class="action">
+            <td *ngIf="price.totalqty > 0">{{ price.productName }}</td>
+            <td *ngIf="price.totalqty > 0">{{ price.scvKG }} Kg</td>
+            <td *ngIf="price.totalqty > 0">0 Kg</td>
+            <td *ngIf="price.totalqty > 0">{{ price.totalqty }} Kg</td>
+            <td class="action" *ngIf="price.totalqty > 0">
               <span>
                 <button (click)="AgreedPrice(-1, price)">
                   <svg

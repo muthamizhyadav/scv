@@ -85,6 +85,10 @@ export class ScvServiceService {
     return this.http.get(`${URL.baseURL}/v1/scv/getScvCartbyId/${id}`);
   }
 
+  RemoveScvFromCart(data: any) {
+    return this.http.post(`${URL.baseURL}/v1/scv/Remove/ScvFrom/Cart`, data);
+  }
+
   // Scv Attendance
   getAllScvAttendance() {
     return this.http.get(`${URL.baseURL}/v1/scv/SCV/Attendance/mange`, {
@@ -236,5 +240,10 @@ export class ScvServiceService {
     return this.http.get(
       `${URL.baseURL}/v1/partnersetPrice/getCartReports/${id}`
     );
+  }
+
+  // getCartBy/Allocated/Scv/:id
+  getCartOnDetails(id: any) {
+    return this.http.get(`${URL.baseURL}/v1/scv/getCartBy/Allocated/Scv/${id}`);
   }
 }

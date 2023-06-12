@@ -14,6 +14,8 @@ export class CartAllocationComponent implements OnInit {
   singleCart: any;
   availableSCV: any;
   allocatedSCV: any;
+  absentSCVCart: any;
+  show_reAllocation: any = false;
   ngOnInit(): void {
     this.getNewAllocation();
     this.getAvailableSCV();
@@ -25,6 +27,7 @@ export class CartAllocationComponent implements OnInit {
     this.service.getNewAllocations().subscribe((e: any) => {
       this.newAllocations = e.unAllocatedCart;
       this.allocatedSCV = e.AllocatedSCV;
+      this.absentSCVCart = e.getAbsentScvCarts;
       console.log(e);
     });
   }
@@ -65,6 +68,26 @@ export class CartAllocationComponent implements OnInit {
   enableAddAlocation(i: any) {
     this.showallocation = true;
     this.singleCart = this.newAllocations[i];
+  }
+
+  RemoveScv(cartId: any) {
+    console.log(cartId);
+    const data = { cartId: cartId };
+    this.service.RemoveScvFromCart(data).subscribe((e: any) => {
+      this.getNewAllocation();
+      this.getAvailableSCV();
+      this.show_reAllocation = false;
+    });
+  }
+
+  singleForRemove: any;
+  enableReAllocation(i: any) {
+    this.show_reAllocation = true;
+    this.singleForRemove = this.absentSCVCart[i];
+    console.log(this.singleForRemove);
+  }
+  disableReAllocation() {
+    this.show_reAllocation = false;
   }
 
   // popups

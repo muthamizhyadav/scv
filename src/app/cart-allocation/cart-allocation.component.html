@@ -74,13 +74,15 @@
   <!-- Newly added cart -->
   <div class="carts-container">
     <!-- when scv is absent/inactive -->
-    <div class="carts-card">
-      <h3 class="cart-name">Cart Name</h3>
+    <div class="carts-card" *ngFor="let abs of absentSCVCart; let i = index">
+      <h3 class="cart-name">{{ abs.cartName }}</h3>
       <div class="cart-image">
-        <img src="../../assets/cart.jpg" />
+        <img [src]="'https://wayr.link/' + abs.image" />
       </div>
       <span class="vehicle-detail">
-        <p>TN 05 BR 7917<sub>(Tata Ace)</sub></p>
+        <p>
+          {{ abs.vehicleNumber }}<sub>({{ abs.vehicleName }})</sub>
+        </p>
       </span>
       <span class="cart-location">
         <svg
@@ -96,7 +98,7 @@
           />
         </svg>
 
-        <p>Alwarpet</p>
+        <p>{{ abs.cartLocation }}</p>
       </span>
       <span class="scv-name inactived-scv">
         <svg
@@ -112,7 +114,20 @@
           />
         </svg>
 
-        <p>SCV Name</p>
+        <p (click)="enableReAllocation(i)">{{ abs.scv.Name }}</p>
+        <svg
+          class="edit-scv-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="red"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.7008 0.9056L5.832 6.7728L5.8384 10.1704L9.2288 10.1648L15.0936 4.2992C15.6907 5.44131 16.0017 6.71124 16 8C16 12.4184 12.4184 16 8 16C3.5816 16 0 12.4184 0 8C0 3.5816 3.5816 0 8 0C9.3352 0 10.5936 0.3272 11.7008 0.9056ZM14.7888 0.0808001L15.9192 1.212L8.5656 8.5656L7.436 8.568L7.4344 7.4344L14.788 0.0799999L14.7888 0.0808001Z"
+            fill="red"
+          />
+        </svg>
       </span>
     </div>
     <!-- add scv -->
@@ -169,7 +184,7 @@
     <div class="carts-card" *ngFor="let cartSCV of allocatedSCV; let i = index">
       <h3 class="cart-name">{{ cartSCV.cartName }}</h3>
       <div class="cart-image">
-        <img [src]="'https://wayr.link/'+cartSCV.image" />
+        <img [src]="'https://wayr.link/' + cartSCV.image" />
       </div>
       <span class="vehicle-detail">
         <p>
@@ -294,6 +309,67 @@
     <div class="buttons">
       <button class="back">Back</button>
       <button class="remove-btn">Remove</button>
+    </div>
+  </div>
+</div>
+
+<!-- attendance off scv Carts popup -->
+
+<div class="popup" *ngIf="show_reAllocation">
+  <div class="popup-close" (click)="disableReAllocation()"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>Allocate SCV</h3>
+    </div>
+    <div class="allocate-scv">
+      <div class="cart-detail-view">
+        <div class="carts-card">
+          <h3 class="cart-name">{{ singleForRemove.cartName }}</h3>
+          <div class="cart-image">
+            <img
+              [src]="'https://wayr.link/' + singleForRemove.image"
+              style="width: 100%; height: 100%; object-fit: initial"
+            />
+          </div>
+          <span class="vehicle-detail">
+            <p>
+              {{ singleForRemove.vehicleNumber
+              }}<sub>({{ singleForRemove.vehicleName }})</sub>
+            </p>
+          </span>
+          <span class="cart-location">
+            <svg
+              width="13"
+              height="16"
+              viewBox="0 0 13 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.0962 11.3137L6.5 16L1.90378 11.3137C0.994747 10.3868 0.37569 9.20592 0.124893 7.92033C-0.125905 6.63474 0.00282161 5.30219 0.494793 4.0912C0.986765 2.8802 1.81989 1.84514 2.8888 1.11692C3.95772 0.388689 5.21443 0 6.5 0C7.78557 0 9.04228 0.388689 10.1112 1.11692C11.1801 1.84514 12.0132 2.8802 12.5052 4.0912C12.9972 5.30219 13.1259 6.63474 12.8751 7.92033C12.6243 9.20592 12.0053 10.3868 11.0962 11.3137ZM6.5 9.57288C7.26618 9.57288 8.00098 9.26255 8.54275 8.71016C9.08452 8.15776 9.38889 7.40856 9.38889 6.62736C9.38889 5.84616 9.08452 5.09695 8.54275 4.54456C8.00098 3.99217 7.26618 3.68184 6.5 3.68184C5.73382 3.68184 4.99902 3.99217 4.45725 4.54456C3.91548 5.09695 3.61111 5.84616 3.61111 6.62736C3.61111 7.40856 3.91548 8.15776 4.45725 8.71016C4.99902 9.26255 5.73382 9.57288 6.5 9.57288ZM6.5 8.10012C6.11691 8.10012 5.74951 7.94495 5.47862 7.66876C5.20774 7.39256 5.05556 7.01796 5.05556 6.62736C5.05556 6.23676 5.20774 5.86216 5.47862 5.58596C5.74951 5.30977 6.11691 5.1546 6.5 5.1546C6.88309 5.1546 7.25049 5.30977 7.52138 5.58596C7.79226 5.86216 7.94444 6.23676 7.94444 6.62736C7.94444 7.01796 7.79226 7.39256 7.52138 7.66876C7.25049 7.94495 6.88309 8.10012 6.5 8.10012Z"
+                fill="#3C4048"
+              />
+            </svg>
+
+            <p>{{ singleForRemove.cartLocation }}</p>
+          </span>
+        </div>
+      </div>
+      <div class="select-scv">
+        <p>Select SCV</p>
+        <select (change)="scvAllocationChange($event, singleForRemove._id)">
+          <option selected disabled>{{ singleForRemove.scv.Name }}</option>
+          <option *ngFor="let scv of availableSCV" [value]="scv._id">
+            {{ scv.Name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="remove-btn" (click)="RemoveScv(singleForRemove._id)">
+        Remove
+      </button>
+      <button class="allocate-btn" (click)="Allocation()">Allocate</button>
     </div>
   </div>
 </div>

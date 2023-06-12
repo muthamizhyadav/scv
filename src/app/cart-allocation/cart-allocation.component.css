@@ -198,6 +198,7 @@
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.316);
 }
 .remove-btn {
-  background-color: var(--blue);
-  color: white !important;
+  background-color: #9a9ca0;
+  color: #004c6c;
+  margin-right: 30px;
 }

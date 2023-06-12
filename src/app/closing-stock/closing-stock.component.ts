@@ -107,6 +107,4 @@ export class ClosingStockComponent implements OnInit {
   backRoute() {
     this.route.navigateByUrl('/stock-update');
   }
-
- 
 }

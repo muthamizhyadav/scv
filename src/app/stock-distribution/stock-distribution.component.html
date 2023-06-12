@@ -11,7 +11,7 @@
     <table>
       <tr class="table-header">
         <th>Product</th>
-        <th>Available Stock</th>
+        <th>Available(partner) Stock</th>
         <th>Raised KG</th>
         <th>Last Closing</th>
         <th>Given Stock</th>
@@ -21,7 +21,7 @@
         <td>{{ data.productName }}</td>
         <td>Dummy kg</td>
         <td>{{ data.QTY }} kg</td>
-        <td>Dummy kg</td>
+        <td>{{ data.yersterdayReturn }} kg</td>
         <td class="action">
           <span>
             <button (click)="GiveStock(-1, data)">

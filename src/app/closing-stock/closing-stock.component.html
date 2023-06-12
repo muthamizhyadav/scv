@@ -60,7 +60,9 @@
         <td>{{ data.products.productTitle }}</td>
         <td>
           {{
-            (data.givenQTY ? data.givenQTY : 0) + (data.dQTY ? data.dQTY : 0)
+            (data.givenQTY ? data.givenQTY : 0) +
+              (data.dQTY ? data.dQTY : 0) +
+              data.yersterdayReturn
           }}
           Kg
         </td>

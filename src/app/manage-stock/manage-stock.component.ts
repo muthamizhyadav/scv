@@ -16,7 +16,7 @@ export class ManageStockComponent implements OnInit {
 
   AllocationData() {
     this.service.getNewAllocations().subscribe((e: any) => {
-      this.allocatedData = e.AllocatedSCV;
+      this.allocatedData = e.Allocatedscv;
       console.log(this.allocatedData);
     });
   }

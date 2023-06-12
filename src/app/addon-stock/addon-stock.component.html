@@ -47,9 +47,10 @@
     <table>
       <tr class="table-header">
         <th>Product</th>
-        <th>Available Stock</th>
+        <th>Available(partner) Stock</th>
         <th>Raised kg</th>
         <th>Given Kg</th>
+        <th>Total Kg</th>
         <th>
           <span
             ><p>Last Balance</p>
@@ -61,10 +62,18 @@
 
       <tr *ngFor="let data of orderedProducts; let i = index">
         <td>{{ data.products.productTitle }}</td>
-        <td>0 Kg</td>
+        <td>Dummy Kg</td>
         <td>{{ data.QTY }} Kg</td>
         <td>
-          {{ data.dQTY ? data.dQTY : 0 + data.givenQTY ? data.givenQTY : 0 }} Kg
+          {{ data.dQTY ? data.dQTY : 0 }}
+          Kg
+        </td>
+        <td>
+          {{
+            (data.dQTY ? data.dQTY : 0) +
+              (data.givenQTY ? data.givenQTY : 0) +
+              data.yersterdayReturn
+          }}
         </td>
         <td>{{ data.balanceQTY ? data.balanceQTY : 0 }} Kg</td>
         <td class="action">

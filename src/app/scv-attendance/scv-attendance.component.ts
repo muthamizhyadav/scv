@@ -21,7 +21,6 @@ export class ScvAttendanceComponent implements OnInit {
   fetchAllScvAttendace() {
     this.service.getAllScvAttendance().subscribe((e: any) => {
       this.attendanceData = e;
-      console.log(this.attendanceData);
     });
   }
 
@@ -47,8 +46,16 @@ export class ScvAttendanceComponent implements OnInit {
     }
     const dataToserver = { type: status, scvId: data._id };
     console.log(dataToserver);
-    this.service.UpdateAttendance(dataToserver).subscribe((e: any) => {
-      this.fetchAllScvAttendace();
+    this.service.getCartOnDetails(dataToserver.scvId).subscribe((e: any) => {
+      console.log(e);
+      if (this.date == e.cartOnDate) {
+        this.disablewarning = true;
+        console.log('same date');
+      } else {
+        this.service.UpdateAttendance(dataToserver).subscribe((a: any) => {
+          this.fetchAllScvAttendace();
+        });
+      }
     });
   }
 
@@ -61,10 +68,15 @@ export class ScvAttendanceComponent implements OnInit {
     this.date = formattedDate;
   }
 
+  close_StockRedirect() {
+    this.route.navigateByUrl('/stock-update');
+  }
+
   // popup
 
   closeWarning() {
     this.disablewarning = false;
+    this.fetchAllScvAttendace();
   }
 
   report_Redirect(id: any) {

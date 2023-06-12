@@ -26,7 +26,7 @@
       <thead>
         <tr>
           <th>Product</th>
-          <th>Given total kg</th>
+          <th>Total kg</th>
           <th>Last Balance ({{ latestUpdateStock }})</th>
           <th>Update Balance</th>
         </tr>
@@ -36,7 +36,9 @@
           <td>{{ data.products.productTitle }}</td>
           <td>
             {{
-              data.dQTY ? data.dQTY : 0 + (data.givenQTY ? data.givenQTY : 0)
+              (data.dQTY ? data.dQTY : 0) +
+                (data.givenQTY ? data.givenQTY : 0) +
+                data.yersterdayReturn
             }}
             kg
           </td>
