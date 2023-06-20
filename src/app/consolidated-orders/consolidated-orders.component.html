@@ -69,12 +69,11 @@
 
       <tr *ngFor="let data of products">
         <td>{{ data.productName }}</td>
-        <td>{{ data.scvKG }} Kg</td>
-
+        <td class="svkg" (click)="CartProducts(data.productId)">
+          {{ data.scvKG }} Kg
+        </td>
         <td>14 KG</td>
-
         <td>0 kg</td>
-
         <td class="action">
           <span>
             <button (click)="AddQty(-1, data)">
@@ -141,12 +140,12 @@
             <th>Agreed Price</th>
           </tr>
 
-          <tr *ngFor="let price of products">
-            <td *ngIf="price.totalqty > 0">{{ price.productName }}</td>
-            <td *ngIf="price.totalqty > 0">{{ price.scvKG }} Kg</td>
-            <td *ngIf="price.totalqty > 0">0 Kg</td>
-            <td *ngIf="price.totalqty > 0">{{ price.totalqty }} Kg</td>
-            <td class="action" *ngIf="price.totalqty > 0">
+          <tr *ngFor="let price of data">
+            <td>{{ price.productName }}</td>
+            <td>{{ price.scvKG }} Kg</td>
+            <td>0 Kg</td>
+            <td>{{ price.totalqty }} Kg</td>
+            <td class="action">
               <span>
                 <button (click)="AgreedPrice(-1, price)">
                   <svg
@@ -228,6 +227,30 @@
     </div>
     <div class="buttons">
       <button class="back-btn" (click)="clostProduct()">Back</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup" *ngIf="orderProduct">
+  <div class="popup-close" (click)="closePreviewProducts()"></div>
+  <div class="popup-container">
+    <div class="title">
+      <h3>{{ singleCartName.productTitle }}</h3>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr class="table-header">
+          <th>CartName</th>
+          <th>Qty</th>
+        </tr>
+        <tr *ngFor="let values of cartProduct">
+          <td>{{ values.cartName }}</td>
+          <td>{{ values.QTY }} Kg</td>
+        </tr>
+      </table>
+    </div>
+    <div class="button">
+      <button class="submit-btn" (click)="closePreviewProducts()">Back</button>
     </div>
   </div>
 </div>

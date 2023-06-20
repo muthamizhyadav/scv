@@ -65,19 +65,22 @@ export class ConsolidatedOrdersComponent implements OnInit {
       totalqty = totalqty + 1;
     }
     data.totalqty = totalqty;
+    this.data = [];
   }
 
   changeInput(e: any, data: any) {
     data.totalqty = parseInt(e.target.value);
+    this.data = [];
   }
-
+  data: any[] = [];
   RaiseOrder() {
-    // let data: any[] = [];
-    // this.products.map((e: any) => {
-    //   if (e.totalqty) {
-    //     data.push(e);
-    //   }
-    // });
+    this.products.map((e: any) => {
+      if (e.totalqty) {
+        if (e.totalqty > 0) {
+          this.data.push(e);
+        }
+      }
+    });
     // let serverData = {
     //   arr: data,
     //   todayDate: this.today,
@@ -136,7 +139,7 @@ export class ConsolidatedOrdersComponent implements OnInit {
         this.showError = false;
         this.closePreview();
         this.getProducts();
-        this.orderRoute()
+        this.orderRoute();
       });
     } else {
       this.showError = true;
@@ -209,6 +212,17 @@ export class ConsolidatedOrdersComponent implements OnInit {
   onSelectionChange() {
     this.list = !this.list;
   }
+  cartProduct: any;
+  singleCartName: any;
+  CartProducts(id: any) {
+    this.service.cartByProduct(this.tomorrow, id).subscribe((e: any) => {
+      console.log(e);
+      this.orderProduct = true;
+      this.cartProduct = e.values;
+      this.singleCartName = e.product;
+      console.log(this.cartProduct);
+    });
+  }
 
   PreviewOrders() {
     this.orderView = true;
@@ -216,6 +230,12 @@ export class ConsolidatedOrdersComponent implements OnInit {
   closePreview() {
     this.orderView = false;
   }
+
+  orderProduct: any = false;
+  closePreviewProducts() {
+    this.orderProduct = false;
+  }
+
   clostProduct() {
     this.showProduct = false;
   }

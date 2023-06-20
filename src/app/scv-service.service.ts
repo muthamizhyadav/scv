@@ -209,7 +209,10 @@ export class ScvServiceService {
 
   getProducts_For_PartnerOrder(date: any) {
     return this.http.get(
-      `${URL.baseURL}/v1/partnersetPrice/getCart/Ordered/Products?date=${date}`
+      `${URL.baseURL}/v1/partnersetPrice/getCart/Ordered/Products?date=${date}`,
+      {
+        headers: { auth: this.token },
+      }
     );
   }
 
@@ -245,5 +248,12 @@ export class ScvServiceService {
   // getCartBy/Allocated/Scv/:id
   getCartOnDetails(id: any) {
     return this.http.get(`${URL.baseURL}/v1/scv/getCartBy/Allocated/Scv/${id}`);
+  }
+
+  cartByProduct(date: any, id: any) {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/getCartOrderBy/Product?date=${date}&productId=${id}`,
+      { headers: { auth: this.token } }
+    );
   }
 }
