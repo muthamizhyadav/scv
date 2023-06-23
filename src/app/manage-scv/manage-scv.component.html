@@ -147,7 +147,12 @@
     <div class="form">
       <div>
         <label>Name :</label>
-        <input type="text" placeholder="Enter Name" formControlName="Name" />
+        <input
+          type="text"
+          placeholder="Enter Name"
+          formControlName="Name"
+          onkeypress="return (event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122)"
+        />
       </div>
       <p class="error-msg" *ngIf="submit && scvForms.get('Name').invalid">
         Error
@@ -155,7 +160,7 @@
       <div>
         <label>Email ID :</label>
         <input
-          type="text"
+          type="email"
           placeholder="Enter Email ID"
           formControlName="email"
         />
@@ -167,9 +172,10 @@
       <div>
         <label>Phone Number :</label>
         <input
-          type="text"
+          type="tel"
           placeholder="Enter Phone Number"
           formControlName="phoneNumber"
+          maxlength="10"
         />
       </div>
       <p
@@ -205,9 +211,10 @@
       <div>
         <label>Pin code :</label>
         <input
-          type="text"
+          type="tel"
           placeholder="Enter Pin code"
           formControlName="pinCode"
+          maxlength="6"
         />
       </div>
       <p class="error-msg" *ngIf="submit && scvForms.get('pinCode').invalid">
@@ -265,7 +272,7 @@
       <div>
         <label>Email ID :</label>
         <input
-          type="text"
+          type="email"
           placeholder="Enter Email ID"
           formControlName="email"
         />
@@ -274,9 +281,10 @@
       <div>
         <label>Phone Number :</label>
         <input
-          type="text"
+          type="tel"
           placeholder="Enter Phone Number"
           formControlName="phoneNumber"
+          maxlength="10"
         />
       </div>
 
@@ -301,9 +309,10 @@
       <div>
         <label>Pin code :</label>
         <input
-          type="text"
+          type="tel"
           placeholder="Enter Pin code"
           formControlName="pinCode"
+          maxlength="6"
         />
       </div>
 

@@ -145,3 +145,8 @@
   min-width: fit-content !important;
   font-size: 12px !important;
 }
+
+.youtube-container {
+  display: flex;
+  justify-content: center;
+}

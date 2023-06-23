@@ -6,6 +6,8 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { Address } from 'ngx-google-places-autocomplete/objects/address';
+
 @Component({
   selector: 'app-manage-cart',
   templateUrl: './manage-cart.component.html',
@@ -144,5 +146,12 @@ export class ManageCartComponent implements OnInit {
   }
   unShowScvEditeForm() {
     this.scvEditeFrom = false;
+  }
+
+  options: any = {
+    componentRestrictions: { country: 'IN' },
+  };
+  handleAddressChange(address: Address) {
+    console.log(address);
   }
 }

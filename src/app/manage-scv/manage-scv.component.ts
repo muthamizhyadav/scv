@@ -30,7 +30,7 @@ export class ManageScvComponent implements OnInit {
 
   // Add Scv Flow
   scvForms: any = new FormGroup({
-    Name: new FormControl('', Validators.required),
+    Name: new FormControl('', [Validators.required]),
     email: new FormControl('', [
       Validators.required,
       Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
@@ -39,6 +39,7 @@ export class ManageScvComponent implements OnInit {
       Validators.required,
       Validators.pattern('^[6-9]{1}[0-9]{9}$'),
       Validators.minLength(10),
+      Validators.maxLength(10),
     ]),
     address: new FormControl('', Validators.required),
     landMark: new FormControl('', Validators.required),

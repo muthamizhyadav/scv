@@ -180,6 +180,7 @@
           type="text"
           placeholder="Enter Vehicle Number"
           formControlName="vehicleNumber"
+          oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, ' ')"
         />
       </div>
       <p
@@ -194,6 +195,7 @@
           type="text"
           placeholder="Enter Cart Name"
           formControlName="cartName"
+          onkeypress="return (event.keyCode === 8 || event.charCode === 126) || ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 97 && event.keyCode <= 122))"
         />
       </div>
       <p class="error-msg" *ngIf="submit && scvForms.get('cartName').invalid">
@@ -201,11 +203,14 @@
       </p>
       <div>
         <label>Cart Location :</label>
-        <input
+        <!-- <input
           type="text"
           placeholder="Enter Cart Location"
           formControlName="cartLocation"
-        />
+          ngx-google-places-autocomplete
+          (onAddressChange)="handleAddressChange($event)"
+          [options]="options"
+        /> -->
       </div>
       <p
         class="error-msg"

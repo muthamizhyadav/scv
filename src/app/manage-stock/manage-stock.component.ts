@@ -14,6 +14,16 @@ export class ManageStockComponent implements OnInit {
     this.AllocationData();
   }
 
+  id = 'APim84eLj9Q';
+  playerVars = {
+    cc_lang_pref: 'en',
+  };
+  player: any;
+
+  savePlayer(player: any) {
+    this.player = player;
+  }
+
   AllocationData() {
     this.service.getNewAllocations().subscribe((e: any) => {
       this.allocatedData = e.Allocatedscv;

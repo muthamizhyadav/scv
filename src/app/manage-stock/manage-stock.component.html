@@ -242,5 +242,13 @@
       </span>
     </div>
   </div>
-  <h1>You Tube Integration</h1>
+  <div class="youtube-container">
+    <h1>You Tube Integration</h1>
+    <youtube-player
+      [videoId]="id"
+      (ready)="(savePlayer)"
+      [playerVars]="playerVars"
+    >
+    </youtube-player>
+  </div>
 </div>
