@@ -8,7 +8,7 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
-      }
+        }
       },
       "root": "",
       "sourceRoot": "src",
@@ -32,12 +32,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "5000kb",
-                  "maximumError": "1mb"
+                  "maximumError": "100mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "20kb",
+                  "maximumError": "40kb"
                 }
               ],
               "outputHashing": "all"

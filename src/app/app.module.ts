@@ -91,16 +91,16 @@ import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    // GooglePlaceModule,
+    GooglePlaceModule,
     NgxYoutubePlayerModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 2000,
       positionClass: 'toast-bottom-left',
       preventDuplicates: true,
     }),
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyD8NFC9JWmp2ofQFhglFmovCa-pzPUn-gE',
-    // }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD8NFC9JWmp2ofQFhglFmovCa-pzPUn-gE',
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ExampleInterceptor, multi: true },

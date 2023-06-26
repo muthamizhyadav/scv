@@ -51,7 +51,7 @@ p {
 
   position: sticky;
   top: 0;
-  z-index: 9999999;
+  /* z-index: 9999999; */
 }
 .table-container::-webkit-scrollbar {
   display: none;
@@ -88,7 +88,7 @@ table tr td {
 
 .popup {
   height: 100%;
-  z-index: 100000000000000;
+  /* z-index: 100000000000000; */
   width: 100%;
   position: fixed;
   top: 0;
@@ -100,7 +100,7 @@ table tr td {
 }
 
 .popup-container {
-  z-index: 1000;
+  z-index: 1;
   max-height: 90vh;
   overflow-y: auto;
   background-color: #e5edf0;

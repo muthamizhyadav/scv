@@ -256,4 +256,10 @@ export class ScvServiceService {
       { headers: { auth: this.token } }
     );
   }
+
+  getOrderByOrderId(id: any) {
+    return this.http.get(
+      `${URL.baseURL}/v1/partnersetPrice/getOrderDetails/ByOrderId/${id}`
+    );
+  }
 }

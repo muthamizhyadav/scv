@@ -203,14 +203,14 @@
       </p>
       <div>
         <label>Cart Location :</label>
-        <!-- <input
+        <input
           type="text"
           placeholder="Enter Cart Location"
           formControlName="cartLocation"
           ngx-google-places-autocomplete
           (onAddressChange)="handleAddressChange($event)"
           [options]="options"
-        /> -->
+        />
       </div>
       <p
         class="error-msg"
@@ -302,6 +302,9 @@
           type="text"
           placeholder="Enter Cart Location"
           formControlName="cartLocation"
+          ngx-google-places-autocomplete
+          (onAddressChange)="handleAddressChange($event)"
+          [options]="options"
         />
       </div>
       <p

@@ -13,6 +13,8 @@ export class OrdersComponent implements OnInit {
   orders: any;
   viewOrder: any = false;
   singleorder: any;
+  stockit: any = false;
+  orderProducts: any;
   ngOnInit(): void {
     this.getOrders();
   }
@@ -26,7 +28,22 @@ export class OrdersComponent implements OnInit {
   orderClick(i: any) {
     this.showOrder();
     this.singleorder = this.orders[i];
-    console.log(this.singleorder)
+    console.log(this.singleorder);
+  }
+
+  showStockItClick(i: any) {
+    this.stockit = true;
+    this.singleorder = this.orders[i];
+    this.orderProducts = this.orders[i].orderProducts;
+    console.log(this.orderProducts);
+  }
+
+  StockItPageRoute(id: any) {
+    this.route.navigateByUrl(`/stockit?id=${id}`);
+  }
+
+  closeShowStockIt() {
+    this.stockit = false;
   }
 
   showOrder() {

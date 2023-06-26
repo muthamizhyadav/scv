@@ -6,7 +6,7 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
-import { Address } from 'ngx-google-places-autocomplete/objects/address';
+import { Address } from 'ng-google-places-autocomplete';
 
 @Component({
   selector: 'app-manage-cart',
@@ -22,6 +22,8 @@ export class ManageCartComponent implements OnInit {
   AllCArts: any;
   editeimage: any;
   singleData: any;
+  lat: any;
+  long: any;
   ngOnInit(): void {
     this.fetchCart();
   }
@@ -32,6 +34,8 @@ export class ManageCartComponent implements OnInit {
     cartName: new FormControl('', Validators.required),
     cartLocation: new FormControl('', Validators.required),
     image: new FormControl('', Validators.required),
+    lat: new FormControl(0, Validators.required),
+    long: new FormControl(0, Validators.required),
   });
   // Edit Form Controll
 
@@ -60,9 +64,11 @@ export class ManageCartComponent implements OnInit {
         this.scvForms.get('vehicleNumber').value
       );
       formData.append('cartName', this.scvForms.get('cartName').value);
-      formData.append('cartLocation', this.scvForms.get('cartLocation').value);
+      formData.append('cartLocation', this.formattedaddress);
 
       formData.append('image', this.scvfile);
+      formData.append('lat', this.lat);
+      formData.append('long', this.long);
       // Api Call
       this.service.SendSCVFrm(formData).subscribe((e: any) => {
         this.scvFrom = false;
@@ -150,8 +156,13 @@ export class ManageCartComponent implements OnInit {
 
   options: any = {
     componentRestrictions: { country: 'IN' },
+    types: ['address'],
   };
+  formattedaddress: any;
+
   handleAddressChange(address: Address) {
-    console.log(address);
+    this.lat = address.geometry.location.toJSON().lat;
+    this.long = address.geometry.location.toJSON().lng;
+    this.formattedaddress = address.name;
   }
 }
