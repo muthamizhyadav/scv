@@ -1,6 +1,6 @@
 <div class="main-container">
   <div class="page-title">
-    <button class="back">
+    <button class="back" (click)="BackRoute()">
       <svg
         width="12"
         height="22"
@@ -48,7 +48,7 @@
         <th>Raised kg</th>
         <th>Loaded kg</th>
         <th>Revised Price/kg</th>
-        <th>Given Kg</th>
+        <th>Received Kg</th>
       </tr>
 
       <tr *ngFor="let data of orderDetails; let i = index">
@@ -58,7 +58,7 @@
         <td>₹ {{ data.revisedPrice }}</td>
         <td class="action">
           <span>
-            <button>
+            <button (click)="addProductQty(-1, data)">
               <svg
                 width="16"
                 height="16"
@@ -76,10 +76,11 @@
             </button>
             <input
               type="text"
-              [value]="data.stockItKg ? data.stockItKg : 0"
+              [value]="data.receivedQTY ? data.receivedQTY : 0"
+              (keyup)="qtychange($event, data)"
               style="text-align: center"
             />
-            <button>
+            <button (click)="addProductQty(1, data)">
               <svg
                 width="16"
                 height="16"
@@ -107,6 +108,26 @@
       <p class="file-type">.png,.jpg</p>
       <p class="file-name" *ngIf="false">filename.png</p>
     </div>
-    <button class="submit">Submit</button>
+    <button class="submit" (click)="stockItSubmit()">Submit</button>
+  </div>
+</div>
+
+<!-- Error Popup -->
+<div class="popup" *ngIf="showWarn">
+  <div class="popup-close" (click)="closeWarn()"></div>
+  <div class="popup-container">
+    <div class="title">Warning!</div>
+    <div class="content">
+      <h3>{{ warningMSG }}</h3>
+    </div>
+    <div class="buttons-popup">
+      <button
+        style="background-color: #004c6c; color: white"
+        (click)="closeWarn()"
+      >
+        Back
+      </button>
+      <button style="background-color: green; color: white">Continue</button>
+    </div>
   </div>
 </div>

@@ -169,3 +169,40 @@ table tr th span sub {
   top: 0;
   opacity: 0;
 }
+
+.popup-container {
+  max-width: 40%;
+}
+.popup-container .title {
+  text-align: center;
+  color: red;
+  font-weight: 900;
+  font-size: 25px !important;
+  padding-top: 10px;
+}
+
+.popup-container .content {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25%;
+}
+
+.popup-container .content h3 {
+  font-size: 25px !important;
+  color: #004c6c;
+}
+.popup-container .buttons-popup {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 90% !important;
+  margin-top: 20%;
+}
+.popup-container .buttons-popup button {
+  width: 140px;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+}
