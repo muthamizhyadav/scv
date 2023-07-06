@@ -70,7 +70,7 @@
           <button
             class="stock-it-btn"
             *ngIf="data.status == 'Delivered'"
-            (click)="StockItPageRoute(data._id)"
+            (click)="StockItPageRoute(data._id, data.vehicleId)"
           >
             Stock It
           </button>

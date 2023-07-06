@@ -262,4 +262,11 @@ export class ScvServiceService {
       `${URL.baseURL}/v1/partnersetPrice/getOrderDetails/ByOrderId/${id}`
     );
   }
+
+  ReceivedOrdesSubmit(data: any) {
+    return this.http.post(
+      `${URL.baseURL}/v1/partnersetPrice/ReceivedDetails/Update`,
+      data
+    );
+  }
 }

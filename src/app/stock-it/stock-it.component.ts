@@ -18,9 +18,12 @@ export class StockItComponent implements OnInit {
   orderId: any;
   singleOrder: any;
   orderDetails: any;
+  vehicleId: any;
   ngOnInit(): void {
     this.Aroute.queryParams.subscribe((e: any) => {
       this.orderId = e.id;
+      this.vehicleId = e.vehicleId;
+      console.log(this.vehicleId);
     });
     this.getOrders();
   }
@@ -66,6 +69,15 @@ export class StockItComponent implements OnInit {
     if (this.orderDetails.length != this.submitData.length) {
       this.showWarn = true;
       this.warningMSG = `You have ${this.orderDetails.length} Products. But You Enter only ${this.submitData.length} Products`;
+    } else {
+      let data = {
+        arr: this.orderDetails,
+        orderId: this.orderId,
+        vehicleId: this.vehicleId,
+      };
+      this.service.ReceivedOrdesSubmit(data).subscribe((e: any) => {
+        this.route.navigateByUrl('/orders');
+      });
     }
     console.log(this.orderDetails);
     this.TOAST.warning(
@@ -75,6 +87,17 @@ export class StockItComponent implements OnInit {
 
   BackRoute() {
     this.route.navigateByUrl('/orders');
+  }
+
+  continue() {
+    let data = {
+      arr: this.orderDetails,
+      orderId: this.orderId,
+      vehicleId: this.vehicleId,
+    };
+    this.service.ReceivedOrdesSubmit(data).subscribe((e: any) => {
+      this.route.navigateByUrl('/orders');
+    });
   }
 
   closeWarn() {

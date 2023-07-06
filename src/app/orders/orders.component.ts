@@ -38,8 +38,8 @@ export class OrdersComponent implements OnInit {
     console.log(this.orderProducts);
   }
 
-  StockItPageRoute(id: any) {
-    this.route.navigateByUrl(`/stockit?id=${id}`);
+  StockItPageRoute(id: any, vehicleId: any) {
+    this.route.navigateByUrl(`/stockit?id=${id}&vehicleId=${vehicleId}`);
   }
 
   closeShowStockIt() {
